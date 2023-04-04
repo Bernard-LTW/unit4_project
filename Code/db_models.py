@@ -8,7 +8,7 @@ class Base(DeclarativeBase):
     pass
 
 
-class User(Base):
+class Users(Base):
     __tablename__ = "users"
     id: Mapped[int] = mapped_column(primary_key=True)
     username: Mapped[str] = mapped_column(String(20))
@@ -27,7 +27,7 @@ class Post(Base):
     code: Mapped[str] = mapped_column(String(2000))
     like_count: Mapped[int] = mapped_column(Integer, default=0)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
-    user: Mapped[User] = relationship("User", back_populates="posts")
+    user: Mapped[Users] = relationship("Users", back_populates="posts")
 
 
 
