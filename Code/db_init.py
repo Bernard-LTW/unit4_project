@@ -13,9 +13,8 @@ Base.metadata.create_all(db.engine)
 def dummy_insert_user():
     users = ["alice123", "bob123"]
     passwords = ["alice123", "bob123"]
-    emails = ["alice.doe@company.com","bob.doe@company.com"]
-    for user, password, email in zip(users, passwords, emails):
-        new_user = Users(username=user, password=hash_password(password), email=email)
+    for user, password in zip(users, passwords):
+        new_user = Users(username=user, password=hash_password(password))
         db.session.add(new_user)
     db.session.commit()
 

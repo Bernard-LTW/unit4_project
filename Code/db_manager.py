@@ -11,12 +11,17 @@ class DBHandler:
     def __init__(self,path):
         self.engine = db.create_engine(path, echo=True)
         self.session = Session(self.engine)
-    def create_user(self,username, password, email):
-        if not self.session.query(Users).filter_by(email=email).first():
-            new_user = Users(username=username, password=hash_password(password), email=email)
+    def create_user(self,username, password):
+        if not self.session.query(Users).filter_by(username=username).first():
+            new_user = Users(username=username, password=hash_password(password))
             self.session.add(new_user)
             self.session.commit()
             print("User registered")
+            return True
+        else: return False
+
+    def check_user(self,username):
+        return bool(self.session.query(Users).filter_by(username=username).first())
 
 
     def login(self,username, password):
