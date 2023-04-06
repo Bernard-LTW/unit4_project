@@ -20,8 +20,8 @@ def get_username_from_token(token): #get username from token
 def check_token(token): #check if token is valid and not expired
     try:
         decoded_token = jwt.decode(token, token_encryption_key, algorithms=['HS256'])
-        unix_timestamp = (datetime.now() - datetime(1970, 1, 1)).total_seconds()
-        if decoded_token['datetime'] < unix_timestamp:
+        current_time = datetime.utcnow().timestamp()
+        if decoded_token['datetime'] < current_time:
             return False
         else:
             return True

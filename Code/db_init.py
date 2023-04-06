@@ -21,10 +21,11 @@ def dummy_insert_user():
 def dummy_insert_post():
     titles = ["First Post", "Second Post"]
     contents = ["This is my first post", "This is my second post"]
-    codes = ["print('Hello World')", "print('Hello World')"]
+    codes = ["print('Hello World')", "SELECT * FROM users"]
+    code_languages = ["python", "sql"]
     user_ids = [1, 2]
-    for title, content, code, user_id in zip(titles, contents, codes, user_ids):
-        new_post = Post(title=title, content=content, code=code, user_id=user_id)
+    for title, content, code, user_id,code_languages in zip(titles, contents, codes, user_ids,code_languages):
+        new_post = Post(title=title, content=content, code=code, code_language = code_languages,user_id=user_id)
         db.session.add(new_post)
     db.session.commit()
 

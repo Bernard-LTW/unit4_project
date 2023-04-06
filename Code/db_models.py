@@ -24,6 +24,7 @@ class Post(Base):
     datetime_posted: Mapped[datetime.datetime] = mapped_column(DateTime, default=datetime.datetime.utcnow)
     content: Mapped[str] = mapped_column(String(2000))
     code: Mapped[str] = mapped_column(String(2000))
+    code_language: Mapped[str] = mapped_column(String(20))
     like_count: Mapped[int] = mapped_column(Integer, default=0)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
     user: Mapped[Users] = relationship("Users", back_populates="posts")

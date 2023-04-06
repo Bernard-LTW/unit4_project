@@ -1,0 +1,53 @@
+<!-- new_post.html -->
+{% extends "base_template.html" %}
+{% block title %}CodeShare - My Posts{% endblock %}
+{% block css %}
+  <style>
+    /* custom CSS for the delete confirmation modal */
+    .modal-dialog {
+      margin-top: calc(25% - 0.5rem);
+    }
+  </style>
+{% endblock %}
+{% block content %}
+  <div style="margin-top: 140px;">
+    <h1>Hello {{ username }}!</h1>
+    <div class="container mt-3">
+      <h1>My Posts</h1>
+      <hr>
+      {% for post in posts %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h2 class="card-title d-flex justify-content-between">
+              {{ post.title }}
+              <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ post.id }}">
+                <i class="bi bi-trash"></i>Delete
+              </button>
+            </h2>
+            <h6 class="card-subtitle mb-2 text-muted">{{ post.username }} - {{ post.datetime_posted }}</h6>
+            <p class="card-text">{{ post.content }}</p>
+            <pre><code class="language-{{ post.code_language }}">{{ post.code }}</code></pre>
+          </div>
+        </div>
+        <!-- Delete confirmation modal for each post -->
+        <div class="modal fade" id="deleteModal-{{ post.id }}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to delete the post "{{ post.title }}"?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a href="{{ url_for('delete_post', post_id=post.id) }}" class="btn btn-danger">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

@@ -4,6 +4,8 @@
 
 ## Problem definition(Client identification)
 
+I want to create ...
+
 ## Proposed Solution
 
 Considering the client's requirements, an adequate solution would include a localized computer program with a GUI(
@@ -60,7 +62,7 @@ object-oriented format and makes the development easy[^5]
 
 | Task No | Planned Action | Planned Outcome | Time estimate | Target completion date | Criterion |
 | ------- | -------------- | --------------- | ------------- | ---------------------- | --------- |
-|         |                |                 |               |                        |           |
+| 1       |                |                 | 1 hr          |                        | A         |
 
 ## Flow Diagrams
 
