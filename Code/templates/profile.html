@@ -1,0 +1,59 @@
+{% extends "base_template.html" %}
+{% block title %}CodeShare - Profile{% endblock %}
+{% block css %}
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .avatar {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+      }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div style="margin-top: 160px; padding: 0 200px" >
+        <h1>Your Profile</h1>
+        <img class="avatar rounded-circle" src="{{ user.avatar_url }}" alt="Avatar Placeholder">
+        <p>Number of Posts: {{ user.posts.count }}</p>
+        <h2>Posts</h2>
+    {% if posts %}
+        {% for post in user.posts %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ post.username }} - {{ post.datetime_posted }}</h6>
+                    <p class="card-text">{{ post.content }}</p>
+                    <pre><code class="language-{{ post.code_language }}">{{ post.code }}</code></pre>
+                </div>
+                <div class="card-footer d-inline-flex justify-content-start mt-auto">
+                    <h3> Was this helpful?
+                        <a href="/add_like/{{ post.id }}"><button type="button" class="btn btn-outline-success btn-sm w-auto">
+                            <i class="bi bi-hand-thumbs-up"></i> +
+                        </button></a>
+                        <span class="badge bg-secondary">{{ post.like_count }}</span>
+                        <a href="/add_dislike/{{ post.id }}"><button type="button" class="btn btn-outline-danger btn-sm w-auto">
+                            <i class="bi bi-hand-thumbs-down"></i> -
+                        </button></a>
+                    </h3>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>You have not posted anything yet.</h3>
+    {% endif %}
+    </div>
+{% endblock %}

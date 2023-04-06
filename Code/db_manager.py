@@ -40,16 +40,23 @@ class DBHandler:
         return self.session.query(Users).all()
 
     def get_posts(self):
-        return self.session.query(Post).all().reverse()
+        posts = self.session.query(Post).all()
+        for post in posts:
+            user = self.session.query(Users).filter_by(id=post.user_id).first()
+            print(f"post {post.id} belongs to user {user.username} with id {user.id}")
+            post.username = user.username
+            #post.datetime_posted = post.datetime_posted.strftime("%d/%m/%Y %H:%M")
+        posts.reverse()
+        return posts
 
     def get_own_posts(self, username):
         user = self.session.query(Users).filter_by(username=username).first()
         print(f"selecting posts from user {user.username} with id {user.id}")
         posts = self.session.query(Post).filter_by(user_id=user.id).all()
-        print(f"posts: {posts[0].code}")
+        #print(f"posts: {posts[0].code}")
         for post in posts:
             post.username = user.username
-            post.datetime_posted = post.datetime_posted.strftime("%d/%m/%Y %H:%M")
+            #post.datetime_posted = post.datetime_posted.strftime("%d/%m/%Y %H:%M")
         posts.reverse()
         return posts
 
@@ -58,5 +65,34 @@ class DBHandler:
         self.session.delete(post)
         self.session.commit()
         return
+
+    def add_like(self, post_id):
+        post = self.session.query(Post).filter_by(id=post_id).first()
+        post.like_count += 1
+        self.session.commit()
+        return
+
+    def remove_like(self, post_id):
+        post = self.session.query(Post).filter_by(id=post_id).first()
+        post.like_count -= 1
+        self.session.commit()
+        return
+
+    def get_sorted_posts(self, sort_by):
+        posts = None
+        if sort_by == "time":
+            posts = self.session.query(Post).order_by(Post.datetime_posted.desc()).all()
+        elif sort_by == "likes":
+            posts = self.session.query(Post).order_by(Post.like_count.desc()).all()
+        if posts:
+            for post in posts:
+                user = self.session.query(Users).filter_by(id=post.user_id).first()
+                post.username = user.username
+                #post.datetime_posted = post.datetime_posted.strftime("%d/%m/%Y %H:%M")
+            return posts
+
+    def get_user(self, username):
+        user = self.session.query(Users).filter_by(username=username).first()
+        return user
 
 

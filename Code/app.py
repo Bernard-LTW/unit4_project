@@ -31,7 +31,12 @@ def login_required(f):
 
 @app.route('/')
 def hello_world():  # put application's code here
-    return render_template('login.html')
+    try:
+        token = session['token']
+        username = get_username_from_token(token)
+        return redirect(url_for('dashboard'))
+    except KeyError:
+        return redirect(url_for('login'))
 
 
 @app.route('/home')
@@ -75,7 +80,7 @@ def login():
             session['token'] = token
             print(token)
             print("Login successful")
-            return render_template('dashboard.html', username=username, token=token)
+            return redirect(url_for('dashboard'))
         else:
             flash(('Wrong username or password',"danger"))
             return redirect(url_for('login'))
@@ -168,13 +173,78 @@ def new_post():
     except KeyError:
         return redirect(url_for('login'))
 
+
+
+
+
 @app.route("/dashboard")
 def dashboard():
     try:
         token = session['token']
         if check_token(token):
             username = get_username_from_token(token)
-            return render_template('dashboard.html', username=username,token=token)
+            sort_by = request.args.get('sort_by', default='time', type=str)
+            print(sort_by)
+            posts = db.get_sorted_posts(sort_by)
+            return render_template('dashboard.html', title='Dashboard', posts=posts)
+        else:
+            return redirect(url_for('login'))
+    except KeyError:
+        return redirect(url_for('login'))
+
+@app.route("/add_like/<int:post_id>")
+def add_like(post_id):
+    try:
+        token = session['token']
+        if check_token(token):
+            #username = get_username_from_token(token)
+            db.add_like(post_id)
+            return redirect(url_for('dashboard'))
+        else:
+            return redirect(url_for('login'))
+    except KeyError:
+        return redirect(url_for('login'))
+
+@app.route("/add_dislike/<int:post_id>")
+def add_dislike(post_id):
+    try:
+        token = session['token']
+        if check_token(token):
+            #username = get_username_from_token(token)
+            db.remove_like(post_id)
+            return redirect(url_for('dashboard'))
+        else:
+            return redirect(url_for('login'))
+    except KeyError:
+        return redirect(url_for('login'))
+
+@app.route("/profile/<username>")
+def profile(username):
+    try:
+        token = session['token']
+        if check_token(token):
+            posts = db.get_own_posts(username)
+            user = db.get_user(username)
+            return render_template('profile.html', username=username, posts=posts, user=user)
+        else:
+            return redirect(url_for('login'))
+    except KeyError:
+        return redirect(url_for('login'))
+
+
+@app.route("/my_profile", methods=['GET', 'POST'])
+def my_profile():
+    try:
+        token = session['token']
+        if check_token(token):
+            username = get_username_from_token(token)
+            if request.method == 'POST':
+                pass
+                #process form data here
+                #Change either password or username
+            elif request.method == 'GET':
+                user = db.get_user(username)
+                return render_template('my_profile.html', user=user)
         else:
             return redirect(url_for('login'))
     except KeyError:
