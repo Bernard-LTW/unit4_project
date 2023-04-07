@@ -95,4 +95,9 @@ class DBHandler:
         user = self.session.query(Users).filter_by(username=username).first()
         return user
 
+    def get_user_stats(self, username):
+        user = self.session.query(Users).filter_by(username=username).first()
+        posts = self.session.query(Post).filter_by(user_id=user.id).all()
+        return len(posts), sum(post.like_count for post in posts)
+
 

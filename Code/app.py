@@ -82,6 +82,7 @@ def login():
             print("Login successful")
             return redirect(url_for('dashboard'))
         else:
+            print("Login failed")
             flash(('Wrong username or password',"danger"))
             return redirect(url_for('login'))
 
@@ -225,7 +226,8 @@ def profile(username):
         if check_token(token):
             posts = db.get_own_posts(username)
             user = db.get_user(username)
-            return render_template('profile.html', username=username, posts=posts, user=user)
+            stats = db.get_user_stats(username)
+            return render_template('profile.html', username=username, posts=posts, user=user,stats=stats)
         else:
             return redirect(url_for('login'))
     except KeyError:
@@ -244,7 +246,8 @@ def my_profile():
                 #Change either password or username
             elif request.method == 'GET':
                 user = db.get_user(username)
-                return render_template('my_profile.html', user=user)
+                stats = db.get_user_stats(username)
+                return render_template('my_profile.html', user=user, my_posts=my_posts, stats=stats)
         else:
             return redirect(url_for('login'))
     except KeyError:

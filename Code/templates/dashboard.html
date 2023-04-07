@@ -114,7 +114,7 @@
         <div class="card mb-3">
             <div class="card-body">
                 <h2 class="card-title">{{ post.title }}</h2>
-                <h6 class="card-subtitle mb-2 text-muted">{{ post.username }} - {{ post.datetime_posted }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted"><a href="/profile/{{ post.username }}">{{ post.username }}</a> - {{ post.datetime_posted }}</h6>
                 <p class="card-text">{{ post.content }}</p>
                 <pre><code class="language-{{ post.code_language }}">{{ post.code }}</code></pre>
             </div>
