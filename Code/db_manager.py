@@ -100,4 +100,14 @@ class DBHandler:
         posts = self.session.query(Post).filter_by(user_id=user.id).all()
         return len(posts), sum(post.like_count for post in posts)
 
+    def get_password(self, username):
+        user = self.session.query(Users).filter_by(username=username).first()
+        return user.password
+
+    def change_password(self, username, new):
+        user = self.session.query(Users).filter_by(username=username).first()
+        user.password = hash_password(new)
+        self.session.commit()
+        return
+
 

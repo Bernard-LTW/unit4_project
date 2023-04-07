@@ -1,12 +1,12 @@
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 import os
+
+from Code import secure_password
 from db_manager import DBHandler
 from token_management import create_token, check_token, get_username_from_token
 from jinja2 import Environment
-# from pygments.lexers import PythonLexer
-# from pygments.formatters import HtmlFormatter
-# from pygments import highlight
+from secure_password import *
 
 app = Flask(__name__)
 app.jinja_env.filters['strfttime'] = datetime.strftime
@@ -124,9 +124,11 @@ def my_posts():
         token = session['token']
         if check_token(token):
             username = get_username_from_token(token)
+            user = db.get_user(username)
             my_posts = db.get_own_posts(username)
+            stats = db.get_user_stats(username)
             print(my_posts)
-            return render_template('mypost.html', username=username, posts=my_posts)
+            return render_template('mypost.html', user=user, posts=my_posts, stats=stats)
         else:
             return redirect(url_for('login'))
     except KeyError:
@@ -248,6 +250,32 @@ def my_profile():
                 user = db.get_user(username)
                 stats = db.get_user_stats(username)
                 return render_template('my_profile.html', user=user, my_posts=my_posts, stats=stats)
+        else:
+            return redirect(url_for('login'))
+    except KeyError:
+        return redirect(url_for('login'))
+
+
+@app.route("/change_password", methods=['POST'])
+def change_password():
+    current = request.form.get('current_password')
+    new = request.form.get('new_password')
+    confirm = request.form.get('confirm_password')
+    try:
+        token = session['token']
+        if check_token(token):
+            username = get_username_from_token(token)
+            if secure_password.check_password(current,db.get_password(username)):
+                if new == confirm:
+                    db.change_password(username, new)
+                    flash(('Password changed successfully.',"success"))
+                    return redirect(url_for('my_profile'))
+                else:
+                    flash(('New passwords do not match',"danger"))
+                    return redirect(url_for('my_profile'))
+            else:
+                flash(('Current password is incorrect',"danger"))
+                return redirect(url_for('my_profile'))
         else:
             return redirect(url_for('login'))
     except KeyError:
