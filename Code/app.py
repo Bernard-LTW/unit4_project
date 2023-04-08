@@ -118,21 +118,21 @@ def logout():
     session.pop('token', None)
     return redirect(url_for('login'))
 
-@app.route("/my_posts")
-def my_posts():
-    try:
-        token = session['token']
-        if check_token(token):
-            username = get_username_from_token(token)
-            user = db.get_user(username)
-            my_posts = db.get_own_posts(username)
-            stats = db.get_user_stats(username)
-            print(my_posts)
-            return render_template('mypost.html', user=user, posts=my_posts, stats=stats)
-        else:
-            return redirect(url_for('login'))
-    except KeyError:
-        return redirect(url_for('login'))
+# @app.route("/my_posts")
+# def my_posts():
+#     try:
+#         token = session['token']
+#         if check_token(token):
+#             username = get_username_from_token(token)
+#             user = db.get_user(username)
+#             my_posts = db.get_own_posts(username)
+#             stats = db.get_user_stats(username)
+#             print(my_posts)
+#             return render_template('mypost.html', user=user, posts=my_posts, stats=stats)
+#         else:
+#             return redirect(url_for('login'))
+#     except KeyError:
+#         return redirect(url_for('login'))
 
 @app.route("/create_post", methods=['POST'])
 def create_post():
@@ -202,7 +202,8 @@ def add_like(post_id):
         if check_token(token):
             #username = get_username_from_token(token)
             db.add_like(post_id)
-            return redirect(url_for('dashboard'))
+            #return redirect(url_for('dashboard'))
+            return redirect(request.referrer)
         else:
             return redirect(url_for('login'))
     except KeyError:
@@ -215,7 +216,8 @@ def add_dislike(post_id):
         if check_token(token):
             #username = get_username_from_token(token)
             db.remove_like(post_id)
-            return redirect(url_for('dashboard'))
+            #return redirect(url_for('dashboard'))
+            return redirect(request.referrer)
         else:
             return redirect(url_for('login'))
     except KeyError:
@@ -249,7 +251,8 @@ def my_profile():
             elif request.method == 'GET':
                 user = db.get_user(username)
                 stats = db.get_user_stats(username)
-                return render_template('my_profile.html', user=user, my_posts=my_posts, stats=stats)
+                myposts = db.get_own_posts(username)
+                return render_template('my_profile.html', user=user, my_posts=myposts, stats=stats)
         else:
             return redirect(url_for('login'))
     except KeyError:
@@ -280,5 +283,35 @@ def change_password():
             return redirect(url_for('login'))
     except KeyError:
         return redirect(url_for('login'))
+
+
+@app.route("/edit_post/<int:post_id>", methods=['GET', 'POST'])
+def edit_post(post_id):
+    try:
+        token = session['token']
+        if check_token(token):
+            username = get_username_from_token(token)
+            if request.method == 'POST':
+                # process form data here
+                title = request.form.get('title')
+                content = request.form.get('content')
+                code = request.form.get('code')
+                if request.form.get('language') == 'other':
+                    language = request.form.get('other-language')
+                else:
+                    language = request.form.get('language')
+                db.edit_post(post_id, title, content, code, language)
+                flash(('Post edited successfully',"success"))
+                return redirect(url_for('my_posts'))
+            elif request.method == 'GET':
+                post = db.get_post(post_id)
+                return render_template('my_profile.html', post=post)
+        else:
+            return redirect(url_for('login'))
+    except KeyError:
+        return redirect(url_for('login'))
+
+
 if __name__ == '__main__':
     app.run(port=80, debug=True)
+

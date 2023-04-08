@@ -110,4 +110,18 @@ class DBHandler:
         self.session.commit()
         return
 
+    def edit_post(self, post_id, title, content, code, language):
+        post = self.session.query(Post).filter_by(id=post_id).first()
+        post.title = title
+        post.content = content
+        post.code = code
+        post.code_language = language
+        self.session.commit()
+        return
+
+    def get_post(self, post_id):
+        post = self.session.query(Post).filter_by(id=post_id).first()
+        return post
+
+
 
