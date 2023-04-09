@@ -1,10 +1,14 @@
 # Unit 4 Project: Code Sharing Social Media
 
+![](Assets/DALL·E 2023-04-09 00.36.04 - a japanese person suffering in coding in front of a laptop in the form of an oil painting.png)
+
+[ ^1 ]: "a japanese person suffering in coding in front of a laptop in the form of an oil painting" by DALL E 2, Open AI, Accessed 9th April 2023
+
 ## Criteria A: Planning
 
 ## Problem definition(Client identification)
 
-I want to create ...
+I am a student at a high school in Karuizawa. I and a half of my grade take Computer Science as a subject in the International Baccalaureate. We often times have to share code in class and especially outside of class. We used to rely on platforms like Google Chat and Messenger to copy and paste short pieces of code at a time. It was not a very organised and effective solution as it made crediting code hard and referencing back to older shared code basically impossible. As such, there was a need for an consolidated solution for everyone in my class to share code and the class decided on a social media styled website that could represent code with correct syntax formatting and indentations shown.
 
 ## Proposed Solution
 
@@ -30,25 +34,30 @@ object-oriented format and makes the development easy[^5]
 
 2021,https://towardsdatascience.com/here-is-the-reason-why-sqlalchemy-is-so-popular-43b489d3fb00#:~:text=SQLAlchemy%20is%20the%20ORM%20of.
 
-[^5]: Gupta, Kaustubh. “What Is KivyMD: Creating Android Machine Learning Apps Using KivyMD.” *Analytics Vidhya*, 6 July
-
-2021, https://www.analyticsvidhya.com/blog/2021/06/creating-android-ml-app-kivymd/#:~:text=KivyMD%20is%20built%20on%20the.
-
 **Design statement**
+
+
 
 ## Success Criteria
 
-1. 
+1. The website must keep users seperately with an encrypted login system
+1. The website must be able to represent code with the correct syntax highlighting for the appropriate language and the correct indentations
+1. The website must allow posting of code and comments
+1. Users should be able to like/dislike certain posts to increase authenticity of posted content
+1. The website will be able to sort the posts by user/amount of likes/time posted
+1. The website should allow for the changing of passwords per user
 
 # Criteria B: Design
 
 ## System Diagram
 
-**Fig.1** *System diagram of the Japanese Vocab Revision App*
+
+
+**Fig.1** *System diagram of the Website*
 
 ## Data Storage
 
-**Fig.2** *ER diagram of the Website
+**Fig.2** *ER diagram of the Websites
 
 ## UML Diagram
 
@@ -78,32 +87,37 @@ object-oriented format and makes the development easy[^5]
 
 ## Existing Tools
 
-| Software/Development Tools | Coding Structure Tools | Libraries |
-| -------------------------- | ---------------------- | --------- |
-|                            |                        |           |
+| Software/Development Tools | Coding Structure Tools      | Libraries    |
+| -------------------------- | --------------------------- | ------------ |
+| PyCharm                    | Object Oriented Programming | Datetime     |
+| VS Code                    | SQL requests                | Flask        |
+| Python                     | Databases                   | Jinja2       |
+| Javascript                 | Encryptions                 | Passlib.hash |
+| HTML                       | For Loops                   | dotenv       |
+| CSS                        | If-then-else statements     | Jose         |
+| SQLite                     | Object Relation Mapping     | Sqlalchemy   |
+| SQLAlchemy                 |                             |              |
+| JSON Web Tokens            |                             |              |
+| Flask                      |                             |              |
+| Bootstrap 5                |                             |              |
+| ChatGPT                    |                             |              |
+| Github Copilot             |                             |              |
 
 ## List of techniques used
 
 1. 
-
-## Computational Thinking
-
-#### Decomposition
-
-In computational thinking, decomposition refers to breaking a complex problem or system into parts that are easier to
-conceive, understand, program, and maintain. 
-
-#### Pattern recognition, generalization and abstraction
-
-#### Algorithms
-
-An algorithm is a step-by-step procedure for solving a problem or performing a task. Development
 
 # Criteria D: Functionality
 
 ## Demonstration Video
 
 [Click here for the Video]()
+
+
+
+
+
+# Criteria E: Evaluation
 
 # Appendix
 
