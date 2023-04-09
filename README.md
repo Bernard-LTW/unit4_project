@@ -1,6 +1,6 @@
 # Unit 4 Project: Code Sharing Social Media
 
-![](Assets/DALL·E 2023-04-09 00.36.04 - a japanese person suffering in coding in front of a laptop in the form of an oil painting.png)
+![](Assets/DALLE.jpg)
 
 [ ^1 ]: "a japanese person suffering in coding in front of a laptop in the form of an oil painting" by DALL E 2, Open AI, Accessed 9th April 2023
 
