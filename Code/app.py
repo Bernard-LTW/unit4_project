@@ -20,17 +20,8 @@ app.secret_key = secret_key
 
 db = DBHandler("sqlite:///Code/social_media.sqlite")
 app.static_folder = 'static'
-def login_required(f):
-    def wrapper(*args, **kwargs):
-        if 'token' in session:
-            return f(*args, **kwargs)
-        else:
-            flash('You need to login first')
-            return redirect(url_for('login'))
-    return wrapper
-
 @app.route('/')
-def hello_world():  # put application's code here
+def landing_check():  # put application's code here
     try:
         token = session['token']
         username = get_username_from_token(token)
@@ -47,25 +38,6 @@ def home():
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-
-@app.route('/request_example', methods=['POST', 'GET'])
-def request_example():
-    result = ""
-    result2 = ""
-    if request.method == 'POST':
-        # password check
-        password = request.form.get("check_pass")
-        if password:
-            result2 = len(password) >= 8
-            result2 = "Password is valid" if result else "Password is invalid"
-    elif request.method == 'GET':
-        # currency conversion
-        hkd_value = request.args.get("hkd_value")
-        if hkd_value:
-            jpy_value = int(hkd_value) * 17
-            result = f"{jpy_value:.2f} JPY"
-    return render_template("request_example.html", data=result, data2=result2)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -107,32 +79,10 @@ def register():
         # do something with the form data, e.g. store it in a database
     return render_template('login.html')
 
-@app.route('/users')
-def users():
-    #print(f"db: {db}")
-    users = db.get_users()
-    return render_template('users.html', users=users)
-
 @app.route('/logout')
 def logout():
     session.pop('token', None)
     return redirect(url_for('login'))
-
-# @app.route("/my_posts")
-# def my_posts():
-#     try:
-#         token = session['token']
-#         if check_token(token):
-#             username = get_username_from_token(token)
-#             user = db.get_user(username)
-#             my_posts = db.get_own_posts(username)
-#             stats = db.get_user_stats(username)
-#             print(my_posts)
-#             return render_template('mypost.html', user=user, posts=my_posts, stats=stats)
-#         else:
-#             return redirect(url_for('login'))
-#     except KeyError:
-#         return redirect(url_for('login'))
 
 @app.route("/create_post", methods=['POST'])
 def create_post():
@@ -173,9 +123,6 @@ def new_post():
             return render_template('new_post.html')
     except KeyError:
         return redirect(url_for('login'))
-
-
-
 
 
 @app.route("/dashboard")
