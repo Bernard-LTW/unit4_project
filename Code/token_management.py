@@ -13,7 +13,6 @@ def create_token(username, token_duration): #token = encoded(username, datetime)
     return token
 
 def get_username_from_token(token): #get username from token
-    print(token)
     decoded_token = jwt.decode(token, token_encryption_key, algorithms=['HS256'])
     return decoded_token['username']
 

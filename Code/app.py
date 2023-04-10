@@ -212,9 +212,7 @@ def add_dislike(post_id):
     try:
         token = session['token']
         if check_token(token):
-            #username = get_username_from_token(token)
             db.remove_like(post_id)
-            #return redirect(url_for('dashboard'))
             return redirect(request.referrer)
         else:
             return redirect(url_for('login'))
