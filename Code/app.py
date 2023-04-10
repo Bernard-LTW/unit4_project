@@ -136,23 +136,21 @@ def logout():
 
 @app.route("/create_post", methods=['POST'])
 def create_post():
-    if request.method == 'POST':
-        # process form data here
-        title = request.form.get('title')
-        content = request.form.get('content')
-        code = request.form.get('code')
-        token = session['token']
-        username = get_username_from_token(token)
-        db.create_post(title, content, code, username)
-        flash(('Post created successfully',"success"))
-        return redirect(url_for('my_posts'))
-    return render_template('mypost.html')
+    # process form data here
+    title = request.form.get('title')
+    content = request.form.get('content')
+    code = request.form.get('code')
+    token = session['token']
+    username = get_username_from_token(token)
+    db.create_post(title, content, code, username)
+    flash(('Post created successfully',"success"))
+    return redirect(url_for('my_profile'))
 
 
 @app.route("/delete_post/<int:post_id>")
 def delete_post(post_id):
     db.delete_post(post_id)
-    return redirect(url_for('my_posts'))
+    return redirect(url_for('my_profile'))
 
 @app.route("/new_post", methods=['GET', 'POST'])
 def new_post():
@@ -170,7 +168,7 @@ def new_post():
                 username = get_username_from_token(token)
                 db.create_post(title, content, code, language, username)
                 flash(('Post created successfully',"success"))
-                return redirect(url_for('my_posts'))
+                return redirect(url_for('my_profile'))
         elif request.method == 'GET':
             return render_template('new_post.html')
     except KeyError:
@@ -302,7 +300,7 @@ def edit_post(post_id):
                     language = request.form.get('language')
                 db.edit_post(post_id, title, content, code, language)
                 flash(('Post edited successfully',"success"))
-                return redirect(url_for('my_posts'))
+                return redirect(url_for('my_profile'))
             elif request.method == 'GET':
                 post = db.get_post(post_id)
                 return render_template('my_profile.html', post=post)
