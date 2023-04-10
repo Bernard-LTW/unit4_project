@@ -8,7 +8,7 @@
 
 ## Problem definition(Client identification)
 
-I am a student at a high school in Karuizawa. Me and a half of my grade take Computer Science as a subject in the International Baccalaureate Diploma Programme. We often times have to share code in class and especially outside of class. We used to rely on platforms like Google Chat and Messenger to copy and paste short pieces of code at a time. It was not a very organised and effective solution as it made crediting code hard. Not to mention, sharing code over chat platforms make it very hard to add description to the code without making the chat very long and inlegible for looking back. Everyone posts their code in the community as well which makes it hard for other users to differentiate between good, working code and code that needs fixing. As such, there was a need for an consolidated solution for everyone in my class to share code and the class decided on a social media styled website that could represent code with correct syntax formatting and indentations shown.
+I am a student at a high school in Karuizawa. Me and a half of my grade take Computer Science as a subject in the International Baccalaureate Diploma Programme. We often times have to share code in class and especially outside of class. We used to rely on platforms like Google Chat and Messenger to copy and paste short pieces of code at a time. It was not a very organised and effective solution as it made crediting code hard. Not to mention, sharing code over chat platforms make it very hard to add description to the code without making the chat very long and inlegible for looking back. Everyone posts their code in the community as well which makes it hard for other users to differentiate between good, working code and code that needs fixing. As such, there was a need for an consolidated solution for everyone in my class to share code and the class decided on a social media styled website that could represent code with correct syntax formatting and indentations shown.(See evidence of consultation in Appendix 1)
 
 ## Proposed Solution
 
@@ -73,9 +73,38 @@ Considering the client's requirements, an adequate solution would be social-medi
 
 ## Record of Tasks
 
-| Task No | Planned Action | Planned Outcome | Time estimate | Target completion date | Criterion |
-| ------- | -------------- | --------------- | ------------- | ---------------------- | --------- |
-| 1       |                |                 | 1 hr          |                        | A         |
+| Task No | Planned Action                                   | Planned Outcome                                              | Time estimate | Target completion date | Criterion |
+| ------- | ------------------------------------------------ | ------------------------------------------------------------ | ------------- | ---------------------- | --------- |
+| 1       | Planning: First Meeting with client              | Start collecting the context of the problem and research on current solutions | 3min          | March 28th             | A         |
+| 2       | Planning: Defining problem and proposed solution | Start on refining client's requirements and tools needed     | 2 hr          | March 29th             | A         |
+| 3       | Initializing codebase                            | To have the base environment of program ready for coding     | 1 hr          | March 29th             | B         |
+| 4       | Planning : Second Meeting with client            | Decided success criteria                                     | 5 min         | March 30th             | A         |
+| 5       |                                                  |                                                              |               |                        |           |
+| 6       |                                                  |                                                              |               |                        |           |
+| 7       |                                                  |                                                              |               |                        |           |
+| 8       |                                                  |                                                              |               |                        |           |
+| 9       |                                                  |                                                              |               |                        |           |
+| 10      |                                                  |                                                              |               |                        |           |
+| 11      |                                                  |                                                              |               |                        |           |
+| 12      |                                                  |                                                              |               |                        |           |
+| 13      |                                                  |                                                              |               |                        |           |
+| 14      |                                                  |                                                              |               |                        |           |
+| 15      |                                                  |                                                              |               |                        |           |
+| 16      |                                                  |                                                              |               |                        |           |
+| 17      |                                                  |                                                              |               |                        |           |
+| 18      |                                                  |                                                              |               |                        |           |
+| 19      |                                                  |                                                              |               |                        |           |
+| 20      |                                                  |                                                              |               |                        |           |
+| 21      |                                                  |                                                              |               |                        |           |
+| 22      |                                                  |                                                              |               |                        |           |
+| 23      |                                                  |                                                              |               |                        |           |
+| 24      |                                                  |                                                              |               |                        |           |
+| 25      |                                                  |                                                              |               |                        |           |
+| 26      |                                                  |                                                              |               |                        |           |
+| 27      |                                                  |                                                              |               |                        |           |
+| 28      |                                                  |                                                              |               |                        |           |
+| 29      |                                                  |                                                              |               |                        |           |
+| 30      |                                                  |                                                              |               |                        |           |
 
 ## Flow Diagrams
 
@@ -125,5 +154,7 @@ Considering the client's requirements, an adequate solution would be social-medi
 
 # Appendix
 
+![](Assets/Appendix1.jpeg)
 
+**Fig.?** *Rough notes from first meeting with client, includes basic ideas behind problem with current solution*
 
