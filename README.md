@@ -17,16 +17,14 @@ Considering the client's requirements, an adequate solution would be social-medi
 [^2]: Python Geeks. “Advantages of Python: Disadvantages of Python.” Python Geeks, 26 June 2021, https://pythongeeks.org/advantages-disadvantages-of-python
 [^3]: “6 Reasons Why Flask Is Better Framework for Web Application Development.” *Able*, https://able.bio/hardikshah/6-reasons-why-flask-is-better-framework-for-web-application-development--cd398f73.
 [^4]: S, Ravikiran A. “What Is Sqlite? and When to Use It?” *Simplilearn.com*, Simplilearn, 16 Feb.2023, https://www.simplilearn.com/tutorials/sql-tutorial/what-is-sqlite.
-
 [^5]:  Uwase, Ange. “Here Is the Reason Why SQLAlchemy Is so Popular.” Medium, 8 Feb.2021,https://towardsdatascience.com/here-is-the-reason-why-sqlalchemy-is-so-popular-43b489d3fb00#:~:text=SQLAlchemy%20is%20the%20ORM%20of.
-
 [^6]: Pratikasha Shinde. “6 Reasons to Use Bootstrap 5 for Better UI Development – Blog.” *Jade Global*, 6 Oct. 2021, https://www.jadeglobal.com/blog/6-reasons-use-bootstrap-5-better-ui-development.
 [^7]: “What Is JWT?: Akana by Perforce.” *Akana*, https://www.akana.com/blog/what-is-jwt#:~:text=Why%20Use%20JWT%3F,was%20signed%20by%20the%20issuer.
 [^8]: “11 Most in-Demand Programming Languages in 2023.” *Berkeley Boot Camps*, 5 Jan. 2023, https://bootcamp.berkeley.edu/blog/most-in-demand-programming-languages/. 
 
-**Design statement**
+### Design statement
 
-
+**insert something here
 
 ## Success Criteria
 
@@ -51,15 +49,27 @@ Considering the client's requirements, an adequate solution would be social-medi
 
 **Fig.2** *ER diagram of the Website
 
+### Example of Data Entries
+
+![](Assets/CodeShareDB_Post.jpg)
+
+**Fig.3** *Example of data entry in the Post table*
+
+<img src="Assets/CodeShareDB_User.jpg" alt="CodeShareDB_User" style="zoom:50%;" />
+
+**Fig.4** *Example of data entry in the User table*
+
 ## UML Diagram
 
 ![](Assets/CodeShare_UML.jpeg)
 
-**Fig.3** *UML Diagram of the website
+**Fig.5** *UML Diagram of the website
 
 ## Wireframe
 
-**Fig.4** *Wireframe of the website*
+
+
+**Fig.6** *Wireframe of the website*
 
 ## Record of Tasks
 
