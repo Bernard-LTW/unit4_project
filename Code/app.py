@@ -10,9 +10,6 @@ from secure_password import *
 
 app = Flask(__name__)
 app.jinja_env.filters['strfttime'] = datetime.strftime
-# app.jinja_env.filters['highlight'] = highlight
-# app.jinja_env.filters['PythonLexer'] = PythonLexer
-# app.jinja_env.filters['HtmlFormatter'] = HtmlFormatter
 env = Environment()
 env.filters['strftime'] = datetime.strftime
 secret_key = os.urandom(32)

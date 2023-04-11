@@ -55,7 +55,7 @@ Considering the client's requirements, an adequate solution would be social-medi
 
 **Fig.3** *Example of data entry in the Post table*
 
-<img src="Assets/CodeShareDB_User.jpg" alt="CodeShareDB_User" style="zoom:50%;" />
+<img src="Assets/CodeShareDB_User.jpg" alt="CodeShareDB_User" style="zoom: 67%;" />
 
 **Fig.4** *Example of data entry in the User table*
 
@@ -67,7 +67,7 @@ Considering the client's requirements, an adequate solution would be social-medi
 
 ## Wireframe
 
-
+<img src="Assets/CodeShare_Wireframe.jpeg" style="zoom: 67%;" />
 
 **Fig.6** *Wireframe of the website*
 
@@ -108,7 +108,23 @@ Considering the client's requirements, an adequate solution would be social-medi
 
 ## Flow Diagrams
 
+### Token System
 
+<img src="Assets/CodeShareFlow_Token.jpg" style="zoom: 25%;" />
+
+**Fig.7** *Flow Diagram of the token system* This diagram shows how users can authenticate in my website with JWT with expiry time. This ensures that users' data is kept safe and no unauthorized access would occur.
+
+### Sorting
+
+<img src="Assets/CodeShareFlow_Sort.jpg" style="zoom:25%;" />
+
+**Fig.8** *Flow Diagram of sorting system* This flow diagram demonstrates the ability to sort posts by different metrics.
+
+### Like System
+
+<img src="Assets/CodeShareFlow_Like.jpg" style="zoom:25%;" /> 
+
+**Fig.9** *Flow diagram for adding and removing likes* This flow diagram demonstrates how the system for adding like/dislike works.
 
 ## Test Plan
 
