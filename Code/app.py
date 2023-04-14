@@ -45,8 +45,7 @@ def login():
         password = request.form.get('password')
         #db = DBHandler()
         if db.login(username, password):
-            token = create_token(username, 120)
-            session['token'] = token
+            session['token'] = create_token(username, 120)
             print(token)
             print("Login successful")
             return redirect(url_for('dashboard'))

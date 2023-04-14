@@ -24,13 +24,13 @@ Considering the client's requirements, an adequate solution would be social-medi
 
 ### Design statement
 
-**insert something here
+I will design a social media platfom on a website built with Flask, Bootstap, HTML and CSS which stores data in an SQLite database for me and my classmates. This website will allow me and my classmates to post code and descriptions of them accordingly, with a like/dislike system to moderate content. Everything is secured under a hashed login system to keep user data secure. It will take approximately 1 month to complete and will be evaluated according to criterias below:
 
 ## Success Criteria
 
 1. The website must keep users seperately with an encrypted login system
 1. The website must be able to represent code with the correct syntax highlighting for the appropriate language and the correct indentations
-1. The website must allow posting of code and comments
+1. The website must allow posting of code and description
 1. Users should be able to like/dislike certain posts to increase authenticity of posted content
 1. The website will be able to sort the posts by user/amount of likes/time posted
 1. The website should allow for the changing of passwords per user
@@ -122,7 +122,7 @@ Considering the client's requirements, an adequate solution would be social-medi
 
 ### Like System
 
-<img src="Assets/CodeShareFlow_Like.jpg" style="zoom:25%;" /> 
+<img src="Assets/CodeShareFlow_Like2.jpg" style="zoom:25%;" /> 
 
 **Fig.9** *Flow diagram for adding and removing likes* This flow diagram demonstrates how the system for adding like/dislike works.
 
@@ -152,9 +152,147 @@ Considering the client's requirements, an adequate solution would be social-medi
 | ChatGPT                    |                             |              |
 | Github Copilot             |                             |              |
 
-## List of techniques used
+## List of Techniques
 
-1. 
+1. Object Oriented Programming(OOP)
+2. Object Relation Mapping(ORM): SQLAlchemy
+3. Flask Library
+4. Bootstrap Library
+5. Javascript/Python inside HTML
+6. CSS Styling
+7. For loops
+8. if statements
+9. Password Hashing
+10. Token-based authentication
+11. Interacting with Databases
+12. Arrays and Lists
+13. Text Formatting
+
+## Development
+
+### Cards
+
+When researching about social media website designs, I noticed that most websites prefer a card based designed to better guide the user and make the overall interface clearer for reading. Thus, I chose to employ a card-based design for my login screen. Here is the code snippet:
+
+```html
+    <div class="card" style="width: 18rem;">
+      {# Code of the sign in fields inside the card is omitted for demonstration puposes#}
+</div>
+```
+
+As you can see above, the whole sign in form is house inside a `<div>` element which inherits from class `card` from the bootstrap library. This automatically houses the elements inside the `<div>` align to the center and automatically creates a border for the sign in form so the user's attention is immediately grabbed towards it
+
+<img src="Assets/CodeShare_LoginShot.jpg" style="zoom: 33%;" />
+
+**Fig.10**  *Screenshot of the login page, as mentioned above this employs a card design in order to reduce clutter on the screen and lead the user to the most important element which is the login fields.*
+
+### Modals
+
+Throughout this program, the input of certain informations is often needed in instances stated in the success criterias like registering new users, changing passwords, and editing posts. If we redirect the user to a new page everytime one of those actions are being executed, the website will become very cluttered and unintuitive. As such, I have chosen to use a modal which is a web page element that displays in front of and deactivates all other page content. To return to the main content, the user must engage with the modal by completing an action or by closing it. Modals are often used to direct users’ attention to an important action or piece of information on a website or application. For example, when the user clicks on the change password button, it triggers a modal with the following code:
+
+```html
+<button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+```
+
+When the button is defined, it is set to toggle the modal defined below:
+
+```html
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                {# Code omitted for demonstrative purposes#}
+                            </div>
+                        </div>
+```
+
+The modal is created by inheriting from the `modal` class from the Bootstrap 5 library. Inside the modal, we can house ordinary html elements like forms and text fields.
+
+<img src="Assets/Modal.jpg" style="zoom:33%;" />
+
+**Fig.11**  *Screenshot of the modal pop up.*
+
+As you can see, the content around the modal is darkened and directs the user's attention there. 
+
+### JSON Web Tokens
+
+One of the success criterias was to have a hashed login system. One issue I had after the user logged in which was that I couldn't recognize the user after the inital login process. I wanted to use cookies to store the user ids. I realized soon afterwards that the cookies can be easily modified in flight and makes the hashed passwords useless. Soon I came across session tokens. Session tokens are encrypted token that contain information about the user. They expire after a time designated by the developer and can be used to protect the user as it is hashed using a special secret key that only the developer has control over. Currently, once the user succesfully logs in with the right username and password. The main key function on the flask endpoint executes a `create_token` function from the `token_management.py`. The token is created as follows:
+
+```py
+#This functions takes in the username and the how long the token should last in minutes
+def create_token(username, token_duration): 
+  	#This adjusts the starting time of counting the token expiry to keep constenticy across platforms
+    unix_timestamp = (datetime.now() - datetime(1970, 1, 1)).total_seconds()
+    #This line sets the expiry time of the token
+    ttl = token_duration * 60 + unix_timestamp
+    #token format = encoded(username, datetime) token_duration in minutes
+    token  = jwt.encode({'username': username, 'datetime': ttl}, token_encryption_key, algorithm='HS256')
+    #Token is returned to the main flask function
+    return token
+```
+
+After the main function receives the token from the `create_token` function, its gives the token back to the client by putting it into the session variable of the browser as follows:
+
+```py
+session['token'] = create_token(username, 120)
+```
+
+Now, the user holds the token in their browser. When they want to execute an action, the backend tries to get the token from the browser as follows:
+
+```py
+@app.route("/new_post", methods=['GET', 'POST'])
+def new_post():
+    try:
+        token = session['token']
+    except KeyError:
+        return redirect(url_for('login'))
+     #Continues function
+```
+
+On the code above, I used the `try` statement to handle `KeyError` in the instance that the JWT is not present in the user's browser and redirects them to the login page. If the token is present, the validity of it is checked using a `check_token` function. It decodes the token and checks if the expiry time has exceeded current time as follows:
+
+```py
+def check_token(token): #check if token is valid and not expired
+    try:
+      	#Decodes token using predefined key and algorithm
+        decoded_token = jwt.decode(token, token_encryption_key, algorithms=['HS256'])
+        current_time = datetime.utcnow().timestamp()
+        #Compares expiry time and current time
+        if decoded_token['datetime'] < current_time:
+            return False
+        else:
+            return True
+    except Exception:
+        return False
+```
+
+The main function then recieves a boolean value of whether the user is valid in an active session and lets them proceed with the desired action. This system closes the loophole of modifying cookies and completes the hashed authentication system criteria.
+
+### Header and Footer
+
+### Base Template(Pattern Recognition/Generalization/Abstraction)
+
+### Posts Representation
+
+### Code Representation - Syntax Highlighting
+
+### Like/Dislike System
+
+### Sorting System(Algorithms)
+
+### Changing of Passwords(Decomposition)
+
+### Endpoints
+
+
+
+### Database Models
+
+### Initializing Database/Inserting Dummy Data
+
+
+
+
+
+
 
 # Criteria D: Functionality
 
@@ -162,11 +300,17 @@ Considering the client's requirements, an adequate solution would be social-medi
 
 [Click here for the Video]()
 
-
-
-
-
 # Criteria E: Evaluation
+
+## Evaluation by Client
+
+
+
+## Evaluation by Peer
+
+## Recommendations for Improvements
+
+
 
 # Appendix
 
