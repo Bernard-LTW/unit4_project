@@ -127,7 +127,6 @@ def dashboard():
         if check_token(token):
             username = get_username_from_token(token)
             sort_by = request.args.get('sort_by', default='time', type=str)
-            print(sort_by)
             posts = db.get_sorted_posts(sort_by)
             return render_template('dashboard.html', title='Dashboard', posts=posts, username=username)
         else:

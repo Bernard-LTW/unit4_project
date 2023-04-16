@@ -371,24 +371,106 @@ As seen here, the language of the code is needed to highlight the syntax properl
 
 ### Like/Dislike System
 
-Another thing my client wanted was a way to rank 
+Another thing my client wanted was a way to rank the posts based on how helpful they are. To do this, I added a like/dislike system to the posts. The like/dislike system is implemented by adding a like/dislike count to each post. When the user clicks on the like/dislike button, the count is updated in the database and the page is reloaded to show the updated count. The code for the like/dislike system is shown below:
+
+```html
+ <h3> Was this helpful?
+                    <a href="/add_like/{{ post.id }}"><button type="button" class="btn btn-outline-success btn-sm w-auto">
+                        <i class="bi bi-hand-thumbs-up"></i> +
+                    </button></a>
+                    <span class="badge bg-secondary">{{ post.like_count }}</span>
+                    <a href="/add_dislike/{{ post.id }}"><button type="button" class="btn btn-outline-danger btn-sm w-auto">
+                        <i class="bi bi-hand-thumbs-down"></i> -
+                    </button></a>
+                </h3>
+```
 
 ### Sorting System(Algorithms)
+With the like/dislike system, the users can sort the posts by the most helpful posts. To do this, I implemented a sorting algorithm that sorts the posts by the like count. The sorting algorithm is implemented in the `get_sorted_posts()` function in the `db_manager.py` file. The sorting algorithm is a simple sort algorithm that sorts the posts by the like count. There's a button on the dashboard of the website that can let users choose betwen sorting posts by time or by the amount of likes. The code to get the option from the user is shown below:
+```python
+@app.route("/dashboard")
+def dashboard():
+    try:
+        token = session['token']
+        if check_token(token):
+            username = get_username_from_token(token)
+            sort_by = request.args.get('sort_by', default='time', type=str)
+            posts = db.get_sorted_posts(sort_by)
+            return render_template('dashboard.html', title='Dashboard', posts=posts, username=username)
+        else:
+            return redirect(url_for('login'))
+    except KeyError:
+        return redirect(url_for('login'))
+```
+As you can see, the `sort_by` variable is set to `time` by default. If the user chooses to sort by likes, the `sort_by` variable is set to `likes`. The `sort_by` variable is then passed to the `get_sorted_posts()` function in the `db_manager.py` file. The `get_sorted_posts()` function is shown below:
+```python
+    def get_sorted_posts(self, sort_by):
+        posts = None
+        if sort_by == "time":
+            posts = self.session.query(Post).order_by(Post.datetime_posted.desc()).all()
+        elif sort_by == "likes":
+            posts = self.session.query(Post).order_by(Post.like_count.desc()).all()
+        if posts:
+            for post in posts:
+                user = self.session.query(Users).filter_by(id=post.user_id).first()
+                post.username = user.username
+                #post.datetime_posted = post.datetime_posted.strftime("%d/%m/%Y %H:%M")
+            return posts
+```
 
 ### Changing of Passwords(Decomposition)
-
-### Endpoints
-
-### Database Models
-
+One other thing that my client wanted was a way to change their passwords. To do this, I implemented a change password function that allows the user to change their password. The change password function is implemented in the `/change_password` endpoint in the `app.py` file. The change password function is shown below:
+```python
+    if secure_password.check_password(current,db.get_password(username)):
+    if new == confirm:
+        db.change_password(username, new)
+        flash(('Password changed successfully.',"success"))
+        return redirect(url_for('my_profile'))
+    else:
+        flash(('New passwords do not match',"danger"))
+        return redirect(url_for('my_profile'))
+else:
+    flash(('Current password is incorrect',"danger"))
+    return redirect(url_for('my_profile'))
+```
+As you can see, the change password function checks if the current password is correct, then checks if the new password and the confirm password are the same. If both are true, the password is changed in the database and the user is redirected to their profile page. If either of the conditions are false, the user is redirected to their profile page with an error message. The change password function is implemented in the `db_manager.py` file. The change password function is shown below:
+```python
+    def change_password(self, username, new):
+        user = self.session.query(Users).filter_by(username=username).first()
+        user.password = hash_password(new)
+        self.session.commit()
+        return
+```
+As you can see, the change password function hashes the new password and updates the password in the database.
 ### Initializing Database/Inserting Dummy Data
+Throughout the development of the website, I had to initialize the database and insert dummy data into the database. To do this, I implemented a function that initializes the database and inserts dummy data into the database. The function is implemented in the `db_init.py` file. The code is shown below:
+```python
+db = DBHandler("sqlite:///social_media.sqlite")
+## Create tables
+Base.metadata.create_all(db.engine)
+def dummy_insert_user():
+    users = ["alice123", "bob123"]
+    passwords = ["alice123", "bob123"]
+    for user, password in zip(users, passwords):
+        new_user = Users(username=user, password=hash_password(password))
+        db.session.add(new_user)
+    db.session.commit()
 
+def dummy_insert_post():
+    titles = ["First Post", "Second Post"]
+    contents = ["This is my first post", "This is my second post"]
+    codes = ["print('Hello World')", "SELECT * FROM users"]
+    code_languages = ["python", "sql"]
+    user_ids = [1, 2]
+    for title, content, code, user_id,code_languages in zip(titles, contents, codes, user_ids,code_languages):
+        new_post = Post(title=title, content=content, code=code, code_language = code_languages,user_id=user_id)
+        db.session.add(new_post)
+    db.session.commit()
 
-
-
-
-
-
+dummy_insert_user()
+dummy_insert_post()
+```
+As you can see, the function creates two users and two posts. This reduces the amount of time I have to spend on creating dummy data for testing purposes.
 # Criteria D: Functionality
 
 ## Demonstration Video

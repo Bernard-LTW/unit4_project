@@ -6,10 +6,8 @@ from db_manager import DBHandler
 from secure_password import hash_password, check_password
 
 db = DBHandler("sqlite:///social_media.sqlite")
-
 ## Create tables
 Base.metadata.create_all(db.engine)
-
 def dummy_insert_user():
     users = ["alice123", "bob123"]
     passwords = ["alice123", "bob123"]
