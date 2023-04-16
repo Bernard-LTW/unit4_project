@@ -29,11 +29,11 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 ## Success Criteria
 
 1. The website must keep users seperately with an encrypted login system
-1. The website must be able to represent code with the correct syntax highlighting for the appropriate language and the correct indentations
-1. The website must allow posting of code and description
-1. Users should be able to like/dislike certain posts to increase authenticity of posted content
-1. The website will be able to sort the posts by user/amount of likes/time posted
-1. The website should allow for the changing of passwords per user
+2. The website must be able to represent code with the correct syntax highlighting for the appropriate language and the correct indentations
+3. The website must allow posting of code and description
+4. Users should be able to like/dislike certain posts to increase authenticity of posted content
+5. The website will be able to sort the posts by user/amount of likes/time posted
+6. The website should allow for the changing of passwords per user
 
 # Criteria B: Design
 
@@ -73,38 +73,43 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ## Record of Tasks
 
-| Task No | Planned Action                                   | Planned Outcome                                              | Time estimate | Target completion date | Criterion |
-| ------- | ------------------------------------------------ | ------------------------------------------------------------ | ------------- | ---------------------- | --------- |
-| 1       | Planning: First Meeting with client              | Start collecting the context of the problem and research on current solutions | 3min          | March 28th             | A         |
-| 2       | Planning: Defining problem and proposed solution | Start on refining client's requirements and tools needed     | 2 hr          | March 29th             | A         |
-| 3       | Initializing codebase                            | To have the base environment of program ready for coding     | 1 hr          | March 29th             | B         |
-| 4       | Planning : Second Meeting with client            | Decided success criteria                                     | 5 min         | March 30th             | A         |
-| 5       |                                                  |                                                              |               |                        |           |
-| 6       |                                                  |                                                              |               |                        |           |
-| 7       |                                                  |                                                              |               |                        |           |
-| 8       |                                                  |                                                              |               |                        |           |
-| 9       |                                                  |                                                              |               |                        |           |
-| 10      |                                                  |                                                              |               |                        |           |
-| 11      |                                                  |                                                              |               |                        |           |
-| 12      |                                                  |                                                              |               |                        |           |
-| 13      |                                                  |                                                              |               |                        |           |
-| 14      |                                                  |                                                              |               |                        |           |
-| 15      |                                                  |                                                              |               |                        |           |
-| 16      |                                                  |                                                              |               |                        |           |
-| 17      |                                                  |                                                              |               |                        |           |
-| 18      |                                                  |                                                              |               |                        |           |
-| 19      |                                                  |                                                              |               |                        |           |
-| 20      |                                                  |                                                              |               |                        |           |
-| 21      |                                                  |                                                              |               |                        |           |
-| 22      |                                                  |                                                              |               |                        |           |
-| 23      |                                                  |                                                              |               |                        |           |
-| 24      |                                                  |                                                              |               |                        |           |
-| 25      |                                                  |                                                              |               |                        |           |
-| 26      |                                                  |                                                              |               |                        |           |
-| 27      |                                                  |                                                              |               |                        |           |
-| 28      |                                                  |                                                              |               |                        |           |
-| 29      |                                                  |                                                              |               |                        |           |
-| 30      |                                                  |                                                              |               |                        |           |
+| Task No | Planned Action                                   | Planned Outcome                                                                                                     | Time estimate | Target completion date | Criterion |
+|---------|--------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----------|
+| 1       | Planning: First Meeting with client              | Start collecting the context of the problem and research on current solutions                                       | 3min          | Mar 28                 | A         |
+| 2       | Planning: Defining problem and proposed solution | Start on refining client's requirements and tools needed                                                            | 2 hr          | Mar 29                 | A         |
+| 3       | Initializing codebase                            | To have the base environment of program ready for coding                                                            | 1 hr          | Mar 29                 | B         |
+| 4       | Planning : Second Meeting with client            | Decided success criteria                                                                                            | 5 min         | Mar 30                 | A         |
+| 5       | Creating Wireframe                               | To have Wireframe diagram finished                                                                                  | 1 hr          | Apr 1                  | B         |
+| 6       | Coding the structure of the database             | Finalize on the structure of the database                                                                           | 10min         | Apr 2                  | C         |
+| 7       | Initializing db_manager                          | To have a base for the database handler coded and ready for new functions to be coded on top                        | 10min         | Apr 2                  | C         |
+| 8       | Coding basic endpoints                           | To have basic endpoint coded                                                                                        | 15min         | Apr 2                  | C         |
+| 9       | Coding the token manager                         | To have the JWT system implement as a base for my flask application                                                 | 45min         | Apr 2                  | C         |
+| 10      | Coding the Login/Registration  backend           | To have the backend database logics implemented for the user management                                             | 20min         | Apr 3                  | C         |
+| 11      | Coding the login page                            | To design the login page for the website, complete with the registration function as well                           | 1hr           | Apr 3                  | C         |
+| 12      | Coding Header/Footer                             | To have the header/footer of the website designed and coded                                                         | 20min         | Apr 4                  | C         |
+| 13      | Coding Dashboard                                 | To have the layout of the dashboard page coded                                                                      | 30min         | Apr 4                  | C         |
+| 14      | Coding New Post                                  | To have the layout of the new post page coded                                                                       | 30min         | Apr 5                  | C         |
+| 15      | Coding My Profile                                | To have the layout of the my profile page coded                                                                     | 30min         | Apr 5                  | C         |
+| 16      | Coding logic for Dashboard                       | To have the dashboard page connected to the database logic                                                          | 45min         | Apr 6                  | C         |
+| 17      | Coding logic for New Post                        | To have the new post page connected to the database logic                                                           | 45min         | Apr 7                  | C         |
+| 18      | Coding logic for My Profile                      | To have the my profile page connected to the database logic                                                         | 45min         | Apr 8                  | C         |
+| 19      | Coding the Syntax Highlighting for code          | To have the plugin for syntax highlighting code implemented properly                                                | 1hr           | Apr 9                  | C         |
+| 20      | Coding the logic for "other" code languages      | To have the function for other code language other than the listed one to be catered for                            | 20min         | Apr 9                  | C         |
+| 21      | Coding Rating System                             | To have the the like and dislike button connect with the backend database                                           | 30min         | Apr 10                 | C         |
+| 22      | Coding Changing Password                         | To have the change passwords function coded                                                                         | 15min         | Apr 11                 | C         |
+| 23      | Consolidating Code into `base_template.html`     | To reduce repetitive code and centralize the dependencies for the website                                           | 1hr           | Apr 12                 | C         |
+| 24      | Creating System Diagram                          | To have system diagram finished                                                                                     | 30min         | Apr 13                 | B         |
+| 25      | Creating UML Diagram                             | To have the UML diagram finished                                                                                    | 30min         | Apr 13                 | B         |
+| 26      | Creating ER Diagram                              | To have the ER diagram finished                                                                                     | 30min         | Apr 13                 | B         |
+| 27      | Creating Flow Diagrams                           | To have the  flow diagrams finished                                                                                 | 1hr           | Apr 14                 | B         |
+| 28      | Completing Development Part of Criteria C        | To have interesting parts of my code documented properly                                                            | 4hr           | Apr 15                 | C         |
+| 29      | Cleaning up Code                                 | To have the code finalized and organized for easy-understanding                                                     | 10min         | Apr 16                 | C         |
+| 30      | Creating Test Plan                               | To have a test plan created for confirming if the application works to standard                                     | 30min         | Apr 16                 | B         |
+| 32      | Beautifying Readme File                          | To have README file consolidated                                                                                    | 10min         | Apr 16                 | B         |
+| 33      | Finish Video for Criteria D                      | Video evidence of all the success criteria functioning and working within the developed application                 |               |                        | D         |
+| 34      | Evaluation by client                             | To have the website evaluated by the client and the subsequent evidence documented                                  |               |                        | E         |
+| 35      | Evaluation by peer                               | To have the website evaluated by a peer and the subsequent evidence documented                                      |               |                        | E         |
+| 36      | Recommendations                                  | To have taken in recommedations from both evaluations on how the website can be improved and document them properly |               |                        | E         |
 
 ## Flow Diagrams
 
@@ -128,25 +133,25 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ## Test Plan
 
-| Type                 | Description                | Process                                                      | Anticipated Outcome                                          |
-| -------------------- | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Unit Testing         | User Registration          | 1.Open Website<br/>2.Click on the register button<br/>3.Put "johndoe" as the username and "johndoelovescake" for both password fields<br/>4. Click the register button on the modal. | The modal should disappear and a flash message if stating that the user has been registered successfully. |
-| Unit Testing         | User Login                 | 1.Open Website<br />2. Put "johndoe" as the username and "johndoelovescake" as the password<br />3. Click the login button on the login card | The user should be redirected to the dashboard page of the page if the user exists and the password matches the hash in the database. |
-| Unit Testing         | Logout                     | 1.Open Webiste<br />2.Login using the same credentials as above<br />3.Click the log out button on the top bar | The user should be redirected back to the login screen and the session token should be removed from the session storage if checked using "Inspect" |
-| Integration Testing  | Login and Registration     | 1.Open Webiste<br />2.Follow the instuctions for registering a user above<br />3. Follow the instrcutions for logging in above using the same credentials that was registered with<br /> | If the user followed the instructions properly and registered for a user, then the user should be able to login with the same credentials that were just registered with. |
-| Unit Testing         | Changing Password          | 1.Open Website<br />2.Login<br />3.Click on the my profile button on the header<br />4.Click the change password button<br />5. Input the current password of the current user and put "changeme" for new and confirm password<br />6.Click Confirm | If the user followed the instructions properly and no errors occured in the process, then the user should be able to logout and log back into the same user with the same username but with password "changeme". |
-| Unit Testing         | Adding new post            | 1.Open Website<br />2.Login<br />3.Click New Post on the header<br />4.Put in "Hello World Testers!" as the title, "This is a test to the program" as the Content, "swift" as the language and `print(Hello /(tester.username))` as the code.<br />5.Click the submit button | The user should be redirected to their own profile page, where they can see their own posts, including the one they just posted. |
-| Unit Testing         | Like/Dislike a post        | 1.Open Website<br />2.Login<br />3.Click on the like button of a post<br />4.Click on the dislike button of another post | The user should be able to see the like count of the post increase by 1 for the first post and decrease by 1 for the second one. |
-| Intergration Testing | Adding Post / Viewing Post | 1.Open Website<br />2.Login<br />3.Create a new post following the instructions above<br />4.Click the home button | The user should be able to see the post they just created on the top of the dashboard. |
-| Unit Testing         | Sorting System             | 1.Open Website<br />2.Login<br />3.Change the sorting method to by like on the dashboard using the dropdown on the right | The user shoudl be able to see posts sorted by the highest like count. |
-| Code Review          | Reviewing Code             | Going through the code and making sure unused parts are removed, variables are named properly and comments are placed appropriated | Easy to understand and easy to debug code for future development. |
+| Type                 | Description                | Process                                                                                                                                                                                                                                                                      | Anticipated Outcome                                                                                                                                                                                              |
+|----------------------|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Unit Testing         | User Registration          | 1.Open Website<br/>2.Click on the register button<br/>3.Put "johndoe" as the username and "johndoelovescake" for both password fields<br/>4. Click the register button on the modal.                                                                                         | The modal should disappear and a flash message if stating that the user has been registered successfully.                                                                                                        |
+| Unit Testing         | User Login                 | 1.Open Website<br />2. Put "johndoe" as the username and "johndoelovescake" as the password<br />3. Click the login button on the login card                                                                                                                                 | The user should be redirected to the dashboard page of the page if the user exists and the password matches the hash in the database.                                                                            |
+| Unit Testing         | Logout                     | 1.Open Webiste<br />2.Login using the same credentials as above<br />3.Click the log out button on the top bar                                                                                                                                                               | The user should be redirected back to the login screen and the session token should be removed from the session storage if checked using "Inspect"                                                               |
+| Integration Testing  | Login and Registration     | 1.Open Webiste<br />2.Follow the instuctions for registering a user above<br />3. Follow the instrcutions for logging in above using the same credentials that was registered with<br />                                                                                     | If the user followed the instructions properly and registered for a user, then the user should be able to login with the same credentials that were just registered with.                                        |
+| Unit Testing         | Changing Password          | 1.Open Website<br />2.Login<br />3.Click on the my profile button on the header<br />4.Click the change password button<br />5. Input the current password of the current user and put "changeme" for new and confirm password<br />6.Click Confirm                          | If the user followed the instructions properly and no errors occured in the process, then the user should be able to logout and log back into the same user with the same username but with password "changeme". |
+| Unit Testing         | Adding new post            | 1.Open Website<br />2.Login<br />3.Click New Post on the header<br />4.Put in "Hello World Testers!" as the title, "This is a test to the program" as the Content, "swift" as the language and `print(Hello /(tester.username))` as the code.<br />5.Click the submit button | The user should be redirected to their own profile page, where they can see their own posts, including the one they just posted.                                                                                 |
+| Unit Testing         | Like/Dislike a post        | 1.Open Website<br />2.Login<br />3.Click on the like button of a post<br />4.Click on the dislike button of another post                                                                                                                                                     | The user should be able to see the like count of the post increase by 1 for the first post and decrease by 1 for the second one.                                                                                 |
+| Intergration Testing | Adding Post / Viewing Post | 1.Open Website<br />2.Login<br />3.Create a new post following the instructions above<br />4.Click the home button                                                                                                                                                           | The user should be able to see the post they just created on the top of the dashboard.                                                                                                                           |
+| Unit Testing         | Sorting System             | 1.Open Website<br />2.Login<br />3.Change the sorting method to by like on the dashboard using the dropdown on the right                                                                                                                                                     | The user shoudl be able to see posts sorted by the highest like count.                                                                                                                                           |
+| Code Review          | Reviewing Code             | Going through the code and making sure unused parts are removed, variables are named properly and comments are placed appropriated                                                                                                                                           | Easy to understand and easy to debug code for future development.                                                                                                                                                |
 
 # Criteria C: Development
 
 ## Existing Tools
 
 | Software/Development Tools | Coding Structure Tools      | Libraries    |
-| -------------------------- | --------------------------- | ------------ |
+|----------------------------|-----------------------------|--------------|
 | PyCharm                    | Object Oriented Programming | Datetime     |
 | VS Code                    | SQL requests                | Flask        |
 | Python                     | Databases                   | Jinja2       |
@@ -494,6 +499,8 @@ As you can see, the function creates two users and two posts. This reduces the a
 
 ## Evaluation by Peer
 
+
+
 ## Recommendations for Improvements
 
 
@@ -502,5 +509,7 @@ As you can see, the function creates two users and two posts. This reduces the a
 
 ![](Assets/Appendix1.jpeg)
 
-**Fig.?** *Rough notes from first meeting with client, includes basic ideas behind problem with current solution*
+**Fig.14** *Rough notes from first meeting with client, includes basic ideas behind problem with current solution*
+
+
 
