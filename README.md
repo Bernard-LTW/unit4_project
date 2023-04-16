@@ -128,9 +128,18 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ## Test Plan
 
-| Type | Description | Process | Anticipated Outcome |
-| ---- | ----------- | ------- | ------------------- |
-|      |             |         |                     |
+| Type                 | Description                | Process                                                      | Anticipated Outcome                                          |
+| -------------------- | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Unit Testing         | User Registration          |                                                              |                                                              |
+| Unit Testing         | User Login                 |                                                              |                                                              |
+| Unit Testing         | Logout                     |                                                              |                                                              |
+| Integration Testing  | Login and Registration     |                                                              |                                                              |
+| Unit Testing         | Changing Password          |                                                              |                                                              |
+| Unit Testing         | Adding new post            |                                                              |                                                              |
+| Unit Testing         | Like/Dislike a post        |                                                              |                                                              |
+| Intergration Testing | Adding Post / Viewing Post |                                                              |                                                              |
+| Unit Testing         | Sorting System             |                                                              |                                                              |
+| Code Review          | Reviewing Code             | Going through the code and making sure unused parts are removed, variables are named properly and comments are placed appropriated | Easy to understand and easy to debug code for future development. |
 
 # Criteria C: Development
 
@@ -145,7 +154,7 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 | HTML                       | For Loops                   | dotenv       |
 | CSS                        | If-then-else statements     | Jose         |
 | SQLite                     | Object Relation Mapping     | Sqlalchemy   |
-| SQLAlchemy                 |                             |              |
+| SQLAlchemy                 |                             | Prism.js     |
 | JSON Web Tokens            |                             |              |
 | Flask                      |                             |              |
 | Bootstrap 5                |                             |              |
