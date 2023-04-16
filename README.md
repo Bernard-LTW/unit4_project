@@ -266,23 +266,118 @@ def check_token(token): #check if token is valid and not expired
 
 The main function then recieves a boolean value of whether the user is valid in an active session and lets them proceed with the desired action. This system closes the loophole of modifying cookies and completes the hashed authentication system criteria.
 
-### Header and Footer
+### Header and Footers
+
+To keep a consistent look through out the website and to let users easy navigate through different elements. A header and footer is added to the website to keep a structure in between pages and to make sure the user doesn't get lost while interacting with different elements of the website. A header is added to the page with the `<header>` tag in html and to add a footer the `<footer>` tag is used. The header code is showing below to demonstrate:
+
+```html
+<header class="p-3 mb-3 border-bottom fixed-top" style="width: 100%; display: flex; justify-content: space-between; background-color: #d9d9d9;">
+  <div class="d-flex align-items-center">
+    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+      <img src="https://cdn3.iconfinder.com/data/icons/service-design-tools/100/3_Mar-59-512.png" alt="" width="100" height="100">
+        <h1 class="ms-3 mb-0">CodeShare</h1><h4>The place to go for coding in ISAK</h4>
+    </a>
+  </div>
+  <div class="d-flex align-items-center">
+    <ul class="nav me-3">
+      <li class="nav-item">
+        <a class="nav-link link-secondary" href="/dashboard">Home</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link link-body-emphasis" href="/my_profile">My Profile</a>
+      </li>
+    </ul>
+    <div class="d-flex" style = "padding-right: 30px">
+     <a href = "/new_post"><button type="button" class="btn btn-primary me-2 btn-lg">New Post</button></a>
+        <a href="/logout"><button type="button" class="btn btn-danger btn-lg">Logout</button></a>
+    </div>
+  </div>
+</header>
+```
+
+As seen above, the `<header>` tag is used to house the elements inside the top bar of the website. With elements like the website icon, title and the logout button housed inside, a bar that keeps coherence between pages and guides the user. It looks like:
+
+![](Assets/Header.jpg)
+
+**Fig.12**  *Screenshot of header.*
 
 ### Base Template(Pattern Recognition/Generalization/Abstraction)
 
+As the header and footer needs to be present in every single page, it constructs a lot of repetition and boilerplate code in my program. Boilerplate code is referring to parts of code that has to be repeatedly be used with no or a little modification. This is especially present in HTML as it is declarative language. If the code for the header and footer is repeated every time a new page is needed, it would make my code very repetitve and make it hard when I have to change one thing in the header or the footer as I have to change it in every file seperately. Thus, I decided to used a template file, where the header and footer is housed inside one file only, and other files extends from this base file to add their own respective content. The base file starts out like a normal html file with the necessary scripts and CSS files imported, but in the main body, only one line is added:
+
+```html
+{% block content%}{% endblock %}
+```
+
+This line opens up a variable called `content` in the base template. On the other files, it is indicated on the first line that the file is extending the base file:
+
+```html
+{% extends "base_template.html" %}
+```
+
+After that the child file can add content into the variable with the same line:
+
+```html
+{% block content%}
+{# Normal HTML for the main body of the page. Omitted here because of length#}
+{% endblock %}
+```
+
+When this html file is loaded on the browser, the base file is taken and the variables from the child file is beign stitched together automatically into one single HTML file. That way, if I need to change anything on the header/footer or change out dependencies, improving efficiency and future development upgradibility.
+
 ### Posts Representation
+
+To show posts, it's a repetitve / boilerplate code, thus I used the `jinja2` extension for HTML to add a logic functions into my HTML code. On load of the website after successful authtication, the database is queried for posts and an array of posts. The data is then passed through to the HTML for representation. The first thing the HTML checks for is if there's any posts that needs to be shown by the `{if posts}`clause. If posts has any object in it, a for loop `{for post in posts}` is used to loop through the posts and draw them onto the screen using a defined set of elements. Here's the full code:
+
+```html
+{% for post in posts %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <h6 class="card-subtitle mb-2 text-muted"><a href="/profile/{{ post.username }}">{{ post.username }}</a> - {{ post.datetime_posted }}</h6>
+                <p class="card-text">{{ post.content }}</p>
+                <pre><code class="language-{{ post.code_language }}">{{ post.code }}</code></pre>
+            </div>
+            <div class="card-footer d-inline-flex justify-content-start mt-auto">
+                <h3> Was this helpful?
+                    <a href="/add_like/{{ post.id }}"><button type="button" class="btn btn-outline-success btn-sm w-auto">
+                        <i class="bi bi-hand-thumbs-up"></i> +
+                    </button></a>
+                    <span class="badge bg-secondary">{{ post.like_count }}</span>
+                    <a href="/add_dislike/{{ post.id }}"><button type="button" class="btn btn-outline-danger btn-sm w-auto">
+                        <i class="bi bi-hand-thumbs-down"></i> -
+                    </button></a>
+                </h3>
+            </div>
+        </div>
+        {% endfor %}
+```
+
+As you can see, the for loop needs a `{endfor}` argument as it repeats all the html code inside the for loop for each post object when the page is loaded. Here's a screenshot of the posts:
+
+<img src="Assets/PostRepresentation.jpg" style="zoom:50%;" />
+
+**Fig.13**  *Screenshot of posts.*
 
 ### Code Representation - Syntax Highlighting
 
+One key thing of the social media that my client wants is the accurate representation of code with appropriate syntax highlighting and indentations. To address this, I chose to use a lightweight javascript interpreter for the code called Prism.js. To use this in my html, the code is shown with:
+
+```html
+<pre><code class="language-{{ post.code_language }}">{{ post.code }}</code></pre>
+```
+
+As seen here, the language of the code is needed to highlight the syntax properly as there's no way to interpret the language of the code given in such a small program. Thus, a column in the post table of the database is dedicated to storing the language of the code. The code is then housed inside the `<code>` tag and is picked up by the prism javascript file and formatted.
+
 ### Like/Dislike System
+
+Another thing my client wanted was a way to rank 
 
 ### Sorting System(Algorithms)
 
 ### Changing of Passwords(Decomposition)
 
 ### Endpoints
-
-
 
 ### Database Models
 

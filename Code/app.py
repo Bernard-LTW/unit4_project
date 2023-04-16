@@ -46,7 +46,6 @@ def login():
         #db = DBHandler()
         if db.login(username, password):
             session['token'] = create_token(username, 120)
-            print(token)
             print("Login successful")
             return redirect(url_for('dashboard'))
         else:
