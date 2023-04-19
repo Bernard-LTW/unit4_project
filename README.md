@@ -28,7 +28,7 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ## Success Criteria
 
-1. The website must keep users seperately with an encrypted login system
+1. The website must keep users separately with an encrypted login system
 2. The website must be able to represent code with the correct syntax highlighting for the appropriate language and the correct indentations
 3. The website must allow posting of code and description
 4. Users should be able to like/dislike certain posts to increase authenticity of posted content
@@ -73,43 +73,45 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ## Record of Tasks
 
-| Task No | Planned Action                                   | Planned Outcome                                                                                                     | Time estimate | Target completion date | Criterion |
-|---------|--------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----------|
-| 1       | Planning: First Meeting with client              | Start collecting the context of the problem and research on current solutions                                       | 3min          | Mar 28                 | A         |
-| 2       | Planning: Defining problem and proposed solution | Start on refining client's requirements and tools needed                                                            | 2 hr          | Mar 29                 | A         |
-| 3       | Initializing codebase                            | To have the base environment of program ready for coding                                                            | 1 hr          | Mar 29                 | B         |
-| 4       | Planning : Second Meeting with client            | Decided success criteria                                                                                            | 5 min         | Mar 30                 | A         |
-| 5       | Creating Wireframe                               | To have Wireframe diagram finished                                                                                  | 1 hr          | Apr 1                  | B         |
-| 6       | Coding the structure of the database             | Finalize on the structure of the database                                                                           | 10min         | Apr 2                  | C         |
-| 7       | Initializing db_manager                          | To have a base for the database handler coded and ready for new functions to be coded on top                        | 10min         | Apr 2                  | C         |
-| 8       | Coding basic endpoints                           | To have basic endpoint coded                                                                                        | 15min         | Apr 2                  | C         |
-| 9       | Coding the token manager                         | To have the JWT system implement as a base for my flask application                                                 | 45min         | Apr 2                  | C         |
-| 10      | Coding the Login/Registration  backend           | To have the backend database logics implemented for the user management                                             | 20min         | Apr 3                  | C         |
-| 11      | Coding the login page                            | To design the login page for the website, complete with the registration function as well                           | 1hr           | Apr 3                  | C         |
-| 12      | Coding Header/Footer                             | To have the header/footer of the website designed and coded                                                         | 20min         | Apr 4                  | C         |
-| 13      | Coding Dashboard                                 | To have the layout of the dashboard page coded                                                                      | 30min         | Apr 4                  | C         |
-| 14      | Coding New Post                                  | To have the layout of the new post page coded                                                                       | 30min         | Apr 5                  | C         |
-| 15      | Coding My Profile                                | To have the layout of the my profile page coded                                                                     | 30min         | Apr 5                  | C         |
-| 16      | Coding logic for Dashboard                       | To have the dashboard page connected to the database logic                                                          | 45min         | Apr 6                  | C         |
-| 17      | Coding logic for New Post                        | To have the new post page connected to the database logic                                                           | 45min         | Apr 7                  | C         |
-| 18      | Coding logic for My Profile                      | To have the my profile page connected to the database logic                                                         | 45min         | Apr 8                  | C         |
-| 19      | Coding the Syntax Highlighting for code          | To have the plugin for syntax highlighting code implemented properly                                                | 1hr           | Apr 9                  | C         |
-| 20      | Coding the logic for "other" code languages      | To have the function for other code language other than the listed one to be catered for                            | 20min         | Apr 9                  | C         |
-| 21      | Coding Rating System                             | To have the the like and dislike button connect with the backend database                                           | 30min         | Apr 10                 | C         |
-| 22      | Coding Changing Password                         | To have the change passwords function coded                                                                         | 15min         | Apr 11                 | C         |
-| 23      | Consolidating Code into `base_template.html`     | To reduce repetitive code and centralize the dependencies for the website                                           | 1hr           | Apr 12                 | C         |
-| 24      | Creating System Diagram                          | To have system diagram finished                                                                                     | 30min         | Apr 13                 | B         |
-| 25      | Creating UML Diagram                             | To have the UML diagram finished                                                                                    | 30min         | Apr 13                 | B         |
-| 26      | Creating ER Diagram                              | To have the ER diagram finished                                                                                     | 30min         | Apr 13                 | B         |
-| 27      | Creating Flow Diagrams                           | To have the  flow diagrams finished                                                                                 | 1hr           | Apr 14                 | B         |
-| 28      | Completing Development Part of Criteria C        | To have interesting parts of my code documented properly                                                            | 4hr           | Apr 15                 | C         |
-| 29      | Cleaning up Code                                 | To have the code finalized and organized for easy-understanding                                                     | 10min         | Apr 16                 | C         |
-| 30      | Creating Test Plan                               | To have a test plan created for confirming if the application works to standard                                     | 30min         | Apr 16                 | B         |
-| 32      | Beautifying Readme File                          | To have README file consolidated                                                                                    | 10min         | Apr 16                 | B         |
-| 33      | Finish Video for Criteria D                      | Video evidence of all the success criteria functioning and working within the developed application                 |               |                        | D         |
-| 34      | Evaluation by client                             | To have the website evaluated by the client and the subsequent evidence documented                                  |               |                        | E         |
-| 35      | Evaluation by peer                               | To have the website evaluated by a peer and the subsequent evidence documented                                      |               |                        | E         |
-| 36      | Recommendations                                  | To have taken in recommedations from both evaluations on how the website can be improved and document them properly |               |                        | E         |
+| Task No | Planned Action                                   | Planned Outcome                                              | Time estimate | Target completion date | Criterion |
+| ------- | ------------------------------------------------ | ------------------------------------------------------------ | ------------- | ---------------------- | --------- |
+| 1       | Planning: First Meeting with client              | Start collecting the context of the problem and research on current solutions | 3min          | Mar 28                 | A         |
+| 2       | Planning: Defining problem and proposed solution | Start on refining client's requirements and tools needed     | 2 hr          | Mar 29                 | A         |
+| 3       | Initializing codebase                            | To have the base environment of program ready for coding     | 1 hr          | Mar 29                 | B         |
+| 4       | Planning : Second Meeting with client            | Decided success criteria(See Appendix 2)                     | 5 min         | Mar 30                 | A         |
+| 5       | Creating Wireframe                               | To have Wireframe diagram finished                           | 1 hr          | Apr 1                  | B         |
+| 6       | Coding the structure of the database             | Finalize on the structure of the database                    | 10min         | Apr 2                  | C         |
+| 7       | Initializing db_manager                          | To have a base for the database handler coded and ready for new functions to be coded on top | 10min         | Apr 2                  | C         |
+| 8       | Coding basic endpoints                           | To have basic endpoint coded                                 | 15min         | Apr 2                  | C         |
+| 9       | Coding the token manager                         | To have the JWT system implement as a base for my flask application | 45min         | Apr 2                  | C         |
+| 10      | Coding the Login/Registration  backend           | To have the backend database logics implemented for the user management | 20min         | Apr 3                  | C         |
+| 11      | Coding the login page                            | To design the login page for the website, complete with the registration function as well | 1hr           | Apr 3                  | C         |
+| 12      | Coding Header/Footer                             | To have the header/footer of the website designed and coded  | 20min         | Apr 4                  | C         |
+| 13      | Coding Dashboard                                 | To have the layout of the dashboard page coded               | 30min         | Apr 4                  | C         |
+| 14      | Coding New Post                                  | To have the layout of the new post page coded                | 30min         | Apr 5                  | C         |
+| 15      | Coding My Profile                                | To have the layout of the my profile page coded              | 30min         | Apr 5                  | C         |
+| 16      | Coding logic for Dashboard                       | To have the dashboard page connected to the database logic   | 45min         | Apr 6                  | C         |
+| 17      | Coding logic for New Post                        | To have the new post page connected to the database logic    | 45min         | Apr 7                  | C         |
+| 18      | Coding logic for My Profile                      | To have the my profile page connected to the database logic  | 45min         | Apr 8                  | C         |
+| 19      | Coding the Syntax Highlighting for code          | To have the plugin for syntax highlighting code implemented properly | 1hr           | Apr 9                  | C         |
+| 20      | Coding the logic for "other" code languages      | To have the function for other code language other than the listed one to be catered for | 20min         | Apr 9                  | C         |
+| 21      | Coding Rating System                             | To have the the like and dislike button connect with the backend database | 30min         | Apr 10                 | C         |
+| 22      | Coding Changing Password                         | To have the change passwords function coded                  | 15min         | Apr 11                 | C         |
+| 23      | Beta Testing                                     | To have feedback from client to know how to improve          | 1hr           | Apr 11                 | C         |
+| 24      | Coding Delete Confirmation                       | To have the feedback from client's beta testing implemented  | 15min         | Apr 11                 | C         |
+| 25      | Consolidating Code into `base_template.html`     | To reduce repetitive code and centralize the dependencies for the website | 1hr           | Apr 12                 | C         |
+| 26      | Creating System Diagram                          | To have system diagram finished                              | 30min         | Apr 13                 | B         |
+| 27      | Creating UML Diagram                             | To have the UML diagram finished                             | 30min         | Apr 13                 | B         |
+| 28      | Creating ER Diagram                              | To have the ER diagram finished                              | 30min         | Apr 13                 | B         |
+| 29      | Creating Flow Diagrams                           | To have the  flow diagrams finished                          | 1hr           | Apr 14                 | B         |
+| 30      | Completing Development Part of Criteria C        | To have interesting parts of my code documented properly     | 4hr           | Apr 15                 | C         |
+| 31      | Cleaning up Code                                 | To have the code finalized and organized for easy-understanding | 10min         | Apr 16                 | C         |
+| 32      | Creating Test Plan                               | To have a test plan created for confirming if the application works to standard | 30min         | Apr 16                 | B         |
+| 33      | Beautifying Readme File                          | To have README file consolidated                             | 10min         | Apr 16                 | B         |
+| 34      | Finish Video for Criteria D                      | Video evidence of all the success criteria functioning and working within the developed application | 2hr           |                        | D         |
+| 35      | Evaluation by client                             | To have the website evaluated by the client and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
+| 36      | Evaluation by peer                               | To have the website evaluated by a peer and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
+| 37      | Recommendations                                  | To have taken in recommedations from both evaluations on how the website can be improved and document them properly | 15min         | Apr 19                 | E         |
 
 ## Flow Diagrams
 
@@ -495,21 +497,45 @@ As you can see, the function creates two users and two posts. This reduces the a
 
 ## Evaluation by Client
 
+| Success Criteria                                             | Met? | Description                                                  |
+| ------------------------------------------------------------ | ---- | ------------------------------------------------------------ |
+| The website must keep users separately with an encrypted login system | Yes  | Users are secured behind a hashed login system and token system |
+| The website must be able to represent code with the correct syntax highlighting for the appropriate language and the correct indentations | Yes  | The website is able to represent code with correct syntax highlighting and indentation with the prism.js module |
+| The website must allow posting of code and description       | Yes  | The website allows for posting new content via the `new_post/` endpoint |
+| Users should be able to like/dislike certain posts to increase authenticity of posted content | Yes  | The website allows for liking/disliking for specific posts via `add_like/` and `add_dislike/` endpoints |
+| The website will be able to sort the posts by user/amount of likes/time posted | Yes  | The website allows for sorting by time and like count on the home page |
+| The website should allow for the changing of passwords per user | Yes  | The webiste allows for changing passwords with a button on the `my_profile/` endpoint |
 
+The client is very satisfied by the product(See Appendix 3), with the website meeting all the success criteria. During beta testing, the client suggested to add a confirmation dialog for deleting posts to eliminate accidental deletion (See Appendix 5)and that has been implemented as well. One possible improvement highlighted by the client is that one person is limited to one like or dislike in order to prevent people from spamming the like button, removing authenticity from the rating.
 
 ## Evaluation by Peer
 
+My peer is very satisfied by the product(See Appendix 4), with the website meeting all the success criteria. One possible improvement highlighted by my peer was the ability to filter thorugh code by the code language on the home page as that would make it easier to sort through what they're looking for.
 
+## Extensibility
 
-## Recommendations for Improvements
+The client was very satisfied with the final result, as it met all of his requirements. After some additional discussion we concluded that the following future extensions could be added:
 
-
+1. Commenting System - A commenting system to be added to posts as it could let other users give their own opinion with another piece of code. This could be done using a new table inside the database.
 
 # Appendix
 
 ![](Assets/Appendix1.jpeg)
 
-**Fig.14** *Rough notes from first meeting with client, includes basic ideas behind problem with current solution*
+**Appendix.1** *Rough notes from first meeting with client, includes basic ideas behind problem with current solution*
 
+![](Assets/SuccessCriteriaConfirm.jpg)
 
+**Appendix.2** *Contact between developer and client approving success criteria*
 
+![](Assets/ClientEvaluation.jpg)
+
+**Appendix.3** *Contact between developer and client for evaluation of website*
+
+![](Assets/PeerEvaluation.jpg)
+
+**Appendix.4** *Contact between developer and peer for evaluation of website*
+
+![](Assets/ClientBeta.jpg)
+
+**Appendix.5** *Contact between developer and client regarding beta testing and feedback*
