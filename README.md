@@ -226,7 +226,7 @@ The modal is created by inheriting from the `modal` class from the Bootstrap 5 l
 
 **Fig.11**  *Screenshot of the modal pop up.*
 
-As you can see, the content around the modal is darkened and directs the user's attention there. 
+As you can see, the content around the modal is darkened and directs the user's attention there. This same concept is also applied to when the client said they wanted a confirmation before deleting the post in the first round of beta testing. 
 
 ### JSON Web Tokens
 
