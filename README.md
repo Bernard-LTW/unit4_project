@@ -39,15 +39,15 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ## System Diagram
 
-​	![](Assets/CodeShare_SysD.jpeg)
+​	![](Assets/CodeShare_SysD2.jpeg)
 
 **Fig.1** *System diagram of the Website*
 
 ## Data Storage
 
-<img src="Assets/CodeShare_ER.jpeg" style="zoom: 50%;" />
+<img src="Assets/CodeShare_ER2.jpeg" style="zoom: 50%;" />
 
-**Fig.2** *ER diagram of the Website
+**Fig.2** *ER diagram of the Website*
 
 ### Example of Data Entries
 
@@ -61,9 +61,9 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ## UML Diagram
 
-![](Assets/CodeShare_UML.jpeg)
+![](Assets/CodeShare_UML2.jpeg)
 
-**Fig.5** *UML Diagram of the website
+**Fig.5** *UML Diagram of the website*
 
 ## Wireframe
 
@@ -73,45 +73,43 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ## Record of Tasks
 
-| Task No | Planned Action                                   | Planned Outcome                                              | Time estimate | Target completion date | Criterion |
-| ------- | ------------------------------------------------ | ------------------------------------------------------------ | ------------- | ---------------------- | --------- |
-| 1       | Planning: First Meeting with client              | Start collecting the context of the problem and research on current solutions | 3min          | Mar 28                 | A         |
-| 2       | Planning: Defining problem and proposed solution | Start on refining client's requirements and tools needed     | 2 hr          | Mar 29                 | A         |
-| 3       | Initializing codebase                            | To have the base environment of program ready for coding     | 1 hr          | Mar 29                 | B         |
-| 4       | Planning : Second Meeting with client            | Decided success criteria(See Appendix 2)                     | 5 min         | Mar 30                 | A         |
-| 5       | Creating Wireframe                               | To have Wireframe diagram finished                           | 1 hr          | Apr 1                  | B         |
-| 6       | Coding the structure of the database             | Finalize on the structure of the database                    | 10min         | Apr 2                  | C         |
-| 7       | Initializing db_manager                          | To have a base for the database handler coded and ready for new functions to be coded on top | 10min         | Apr 2                  | C         |
-| 8       | Coding basic endpoints                           | To have basic endpoint coded                                 | 15min         | Apr 2                  | C         |
-| 9       | Coding the token manager                         | To have the JWT system implement as a base for my flask application | 45min         | Apr 2                  | C         |
-| 10      | Coding the Login/Registration  backend           | To have the backend database logics implemented for the user management | 20min         | Apr 3                  | C         |
-| 11      | Coding the login page                            | To design the login page for the website, complete with the registration function as well | 1hr           | Apr 3                  | C         |
-| 12      | Coding Header/Footer                             | To have the header/footer of the website designed and coded  | 20min         | Apr 4                  | C         |
-| 13      | Coding Dashboard                                 | To have the layout of the dashboard page coded               | 30min         | Apr 4                  | C         |
-| 14      | Coding New Post                                  | To have the layout of the new post page coded                | 30min         | Apr 5                  | C         |
-| 15      | Coding My Profile                                | To have the layout of the my profile page coded              | 30min         | Apr 5                  | C         |
-| 16      | Coding logic for Dashboard                       | To have the dashboard page connected to the database logic   | 45min         | Apr 6                  | C         |
-| 17      | Coding logic for New Post                        | To have the new post page connected to the database logic    | 45min         | Apr 7                  | C         |
-| 18      | Coding logic for My Profile                      | To have the my profile page connected to the database logic  | 45min         | Apr 8                  | C         |
-| 19      | Coding the Syntax Highlighting for code          | To have the plugin for syntax highlighting code implemented properly | 1hr           | Apr 9                  | C         |
-| 20      | Coding the logic for "other" code languages      | To have the function for other code language other than the listed one to be catered for | 20min         | Apr 9                  | C         |
-| 21      | Coding Rating System                             | To have the the like and dislike button connect with the backend database | 30min         | Apr 10                 | C         |
-| 22      | Coding Changing Password                         | To have the change passwords function coded                  | 15min         | Apr 11                 | C         |
-| 23      | Beta Testing                                     | To have feedback from client to know how to improve          | 1hr           | Apr 11                 | C         |
-| 24      | Coding Delete Confirmation                       | To have the feedback from client's beta testing implemented  | 15min         | Apr 11                 | C         |
-| 25      | Consolidating Code into `base_template.html`     | To reduce repetitive code and centralize the dependencies for the website | 1hr           | Apr 12                 | C         |
-| 26      | Creating System Diagram                          | To have system diagram finished                              | 30min         | Apr 13                 | B         |
-| 27      | Creating UML Diagram                             | To have the UML diagram finished                             | 30min         | Apr 13                 | B         |
-| 28      | Creating ER Diagram                              | To have the ER diagram finished                              | 30min         | Apr 13                 | B         |
-| 29      | Creating Flow Diagrams                           | To have the  flow diagrams finished                          | 1hr           | Apr 14                 | B         |
-| 30      | Completing Development Part of Criteria C        | To have interesting parts of my code documented properly     | 4hr           | Apr 15                 | C         |
-| 31      | Cleaning up Code                                 | To have the code finalized and organized for easy-understanding | 10min         | Apr 16                 | C         |
-| 32      | Creating Test Plan                               | To have a test plan created for confirming if the application works to standard | 30min         | Apr 16                 | B         |
-| 33      | Beautifying Readme File                          | To have README file consolidated                             | 10min         | Apr 16                 | B         |
-| 34      | Finish Video for Criteria D                      | Video evidence of all the success criteria functioning and working within the developed application | 2hr           |                        | D         |
-| 35      | Evaluation by client                             | To have the website evaluated by the client and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
-| 36      | Evaluation by peer                               | To have the website evaluated by a peer and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
-| 37      | Recommendations                                  | To have taken in recommedations from both evaluations on how the website can be improved and document them properly | 15min         | Apr 19                 | E         |
+| Task No | Planned Action                                            | Planned Outcome                                              | Time estimate | Target completion date | Criterion |
+| ------- | --------------------------------------------------------- | ------------------------------------------------------------ | ------------- | ---------------------- | --------- |
+| 1       | Planning: First Meeting with client                       | Start collecting the context of the problem and research on current solutions | 3min          | Mar 28                 | A         |
+| 2       | Planning: Defining problem and proposed solution          | Start on refining client's requirements and tools needed     | 2 hr          | Mar 29                 | A         |
+| 3       | Initializing codebase                                     | To have the base environment of program ready for coding     | 1 hr          | Mar 29                 | B         |
+| 4       | Planning : Second Meeting with client                     | Decided success criteria(See Appendix 2)                     | 5 min         | Mar 30                 | A         |
+| 5       | Planning: Creating Wireframe                              | To have Wireframe diagram finished                           | 1 hr          | Apr 1                  | B         |
+| 6       | Development: Coding the structure of the database         | Finalize on the structure of the database                    | 10min         | Apr 2                  | C         |
+| 7       | Development: Initializing db_manager                      | To have a base for the database handler coded and ready for new functions to be coded on top | 10min         | Apr 2                  | C         |
+| 8       | Development: Coding basic endpoints                       | To have basic endpoint coded                                 | 15min         | Apr 2                  | C         |
+| 9       | Development: Coding the token manager                     | To have the JWT system implement as a base for my flask application | 45min         | Apr 2                  | C         |
+| 10      | Development: Coding the Login/Registration  backend       | To have the backend database logics implemented for the user management | 20min         | Apr 3                  | C         |
+| 11      | Development: Coding the login page                        | To design the login page for the website, complete with the registration function as well | 1hr           | Apr 3                  | C         |
+| 12      | Development: Coding Header/Footer                         | To have the header/footer of the website designed and coded  | 20min         | Apr 4                  | C         |
+| 13      | Development: Coding Dashboard                             | To have the layout of the dashboard page coded               | 30min         | Apr 4                  | C         |
+| 14      | Development: Coding New Post                              | To have the layout of the new post page coded                | 30min         | Apr 5                  | C         |
+| 15      | Development: Coding My Profile                            | To have the layout of the my profile page coded              | 30min         | Apr 5                  | C         |
+| 16      | Development: Coding logic for Dashboard                   | To have the dashboard page connected to the database logic   | 45min         | Apr 6                  | C         |
+| 17      | Development: Coding logic for New Post                    | To have the new post page connected to the database logic    | 45min         | Apr 7                  | C         |
+| 18      | Development: Coding logic for My Profile                  | To have the my profile page connected to the database logic  | 45min         | Apr 8                  | C         |
+| 19      | Development: Coding the Syntax Highlighting for code      | To have the plugin for syntax highlighting code implemented properly | 1hr           | Apr 9                  | C         |
+| 20      | Development: Coding the logic for "other" code languages  | To have the function for other code language other than the listed one to be catered for | 20min         | Apr 9                  | C         |
+| 21      | Development: Coding Rating System                         | To have the the like and dislike button connect with the backend database | 30min         | Apr 10                 | C         |
+| 22      | Development: Coding Changing Password                     | To have the change passwords function coded                  | 15min         | Apr 11                 | C         |
+| 23      | Implementation: Beta Testing                              | To have feedback from client to know how to improve          | 1hr           | Apr 11                 | C         |
+| 24      | Development: Coding Delete Confirmation                   | To have the feedback from client's beta testing implemented  | 15min         | Apr 11                 | C         |
+| 25      | Development: Consolidating Code into `base_template.html` | To reduce repetitive code and centralize the dependencies for the website | 1hr           | Apr 12                 | C         |
+| 26      | Planning: Creating System Diagram                         | To have system diagram finished                              | 30min         | Apr 13                 | B         |
+| 27      | Planning: Creating UML Diagram                            | To have the UML diagram finished                             | 30min         | Apr 13                 | B         |
+| 28      | Planning: Creating ER Diagram                             | To have the ER diagram finished                              | 30min         | Apr 13                 | B         |
+| 29      | Planning: Creating Flow Diagrams                          | To have the  flow diagrams finished                          | 1hr           | Apr 14                 | B         |
+| 30      | Development: Cleaning up Code                             | To have the code finalized and organized for easy-understanding | 10min         | Apr 16                 | C         |
+| 31      | Planning: Creating Test Plan                              | To have a test plan created for confirming if the application works to standard | 30min         | Apr 16                 | B         |
+| 32      | Demonstration: Finish Video for Criteria D                | Video evidence of all the success criteria functioning and working within the developed application | 2hr           |                        | D         |
+| 33      | Evaluation: Evaluation by client                          | To have the website evaluated by the client and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
+| 34      | Evaluation: Evaluation by peer                            | To have the website evaluated by a peer and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
+| 35      | Evaluation: Recommendations                               | To have taken in recommedations from both evaluations on how the website can be improved and document them properly | 15min         | Apr 19                 | E         |
 
 ## Flow Diagrams
 
@@ -123,7 +121,7 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ### Sorting
 
-<img src="Assets/CodeShareFlow_Sort.jpg" style="zoom:25%;" />
+<img src="Assets/CodeShareFlow_Sort3.jpg" style="zoom:25%;" />
 
 **Fig.8** *Flow Diagram of sorting system* This flow diagram demonstrates the ability to sort posts by different metrics.
 
@@ -172,17 +170,17 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 1. Object Oriented Programming(OOP)
 2. Object Relation Mapping(ORM): SQLAlchemy
-3. Flask Library
-4. Bootstrap Library
-5. Javascript/Python inside HTML
-6. CSS Styling
-7. For loops
-8. if statements
-9. Password Hashing
-10. Token-based authentication
-11. Interacting with Databases
-12. Arrays and Lists
-13. Text Formatting
+3. Flask Library/Routes
+4. Javascript/Python inside HTML
+5. CSS Styling
+6. For loops for showing posts
+7. if statements
+8. Password Hashing
+9. Token-based authentication
+10. Interacting with Databases
+11. Arrays and Lists
+12. Text Formatting
+13. DRY Programming Technique
 
 ## Development
 
