@@ -121,7 +121,7 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ### Sorting
 
-<img src="Assets/CodeShareFlow_Sort3.jpg" style="zoom:25%;" />
+<img src="Assets/CodeShareFlow_Sort4.jpg" style="zoom:25%;" />
 
 **Fig.8** *Flow Diagram of sorting system* This flow diagram demonstrates the ability to sort posts by different metrics.
 
