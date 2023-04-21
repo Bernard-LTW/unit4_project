@@ -8,7 +8,7 @@
 
 ## Problem definition(Client identification)
 
-I am a student at a high school in Karuizawa. Me and a half of my grade take Computer Science as a subject in the International Baccalaureate Diploma Programme. We often times have to share code in class and especially outside of class. We used to rely on platforms like Google Chat and Messenger to copy and paste short pieces of code at a time. It was not a very organised and effective solution as it made crediting code hard. Not to mention, sharing code over chat platforms make it very hard to add description to the code without making the chat very long and inlegible for looking back. Everyone posts their code in the community as well which makes it hard for other users to differentiate between good, working code and code that needs fixing. As such, there was a need for an consolidated solution for everyone in my class to share code and the class decided on a social media styled website that could represent code with correct syntax formatting and indentations shown.(See evidence of consultation in Appendix 1)
+I am a student at a high school in Karuizawa. Me and a half of my grade take Computer Science as a subject in the International Baccalaureate Diploma Programme. We often times have to share code in class and especially outside of class. We used to rely on platforms like Google Chat and Messenger to copy and paste short pieces of code at a time. It was not a very organised and effective solution as it made crediting code hard. Not to mention, sharing code over chat platforms make it very hard to add description to the code without making the chat very long and inlegible for looking back. Not to mention, the identation of code gets confused when sent to chat applications, syntax highlighting is non-existent altogether. We have limited amounts of secure and organised platforms to connect about code between the community. Everyone posts their code in the community as well which makes it hard for other users to differentiate between good, working code and code that needs fixing.(See evidence of consultation in Appendix 1)
 
 ## Proposed Solution
 
@@ -24,16 +24,16 @@ Considering the client's requirements, an adequate solution would be social-medi
 
 ### Design statement
 
-I will design a social media platfom on a website built with Flask, Bootstap, HTML and CSS which stores data in an SQLite database for me and my classmates. This website will allow me and my classmates to post code and descriptions of them accordingly, with a like/dislike system to moderate content. Everything is secured under a hashed login system to keep user data secure. It will take approximately 1 month to complete and will be evaluated according to criterias below:
+I will design a social media platfom on a website built with Flask, Bootstap, HTML and CSS which stores data in an SQLite database for me and my classmates. This website will allow me and my classmates to post code and descriptions of them accordingly, with a like/dislike system to moderate content. It will take approximately 1 month to complete and will be evaluated according to criterias below:
 
 ## Success Criteria
 
-1. The website must keep users separately with an encrypted login system
-2. The website must be able to represent code with the correct syntax highlighting for the appropriate language and the correct indentations
-3. The website must allow posting of code and description
-4. Users should be able to like/dislike certain posts to increase authenticity of posted content
-5. The website will be able to sort the posts by user/amount of likes/time posted
-6. The website should allow for the changing of passwords per user
+1. The website must allow user registration for personal accounts secured with a token system *(Issue tackled: "We have limited amounts of secure and organised platforms")*
+2. The website must be able to represent code with the correct syntax highlighting for the appropriate language and the correct indentations *(Issue tackled: "The identation of code gets confused when sent to chat applications, syntax highlighting is non-existent altogether.")*
+3. The website must allow posting of code and description *(Issue tackled: "Sharing code over chat platforms make it very hard to add description to the code")*
+4. Users should be able to like/dislike certain posts to deferentiate quality of code posted *(Issue tackled: "Everyone posts their code in the community as well which makes it hard for other users to differentiate between good, working code and code that needs fixing.")*
+5. The website will be able to sort the posts by user/amount of likes/time posted *(Issue tackled: "We have limited amounts of secure and organised platforms" and "Making the chat very long and inlegible for looking back")*
+6. The website should allow for the changing of passwords per user *(Issue tackled:"We have limited amounts of secure and organised platforms")*
 
 # Criteria B: Design
 
