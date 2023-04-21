@@ -62,10 +62,10 @@ def register():
         confirm_password = request.form.get('confirmPassword')
         if password != confirm_password:
             flash(('Passwords do not match',"danger"))
-            return redirect(url_for('register'))
+            return redirect(url_for('login'))
         elif db.check_user(username):
             flash(('Username already exists',"danger"))
-            return redirect(url_for('register'))
+            return redirect(url_for('login'))
         else:
             db.create_user(username, password)
             flash(('Registration successful. Please log in now',"success"))

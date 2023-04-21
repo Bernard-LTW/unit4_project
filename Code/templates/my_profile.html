@@ -195,41 +195,64 @@
                                     </div>
 
                                     <script>
-    const languageSelect = document.querySelector("#language");
-    const otherLanguageInput = document.querySelector("#other-language-input");
-    const postLanguage = "{{ post.code_language }}";
+                                        const languageSelect = document.querySelector("#language");
+                                        const otherLanguageInput = document.querySelector("#other-language-input");
+                                        const postLanguage = "{{ post.code_language }}";
 
-    // check if the post language is in the list of options
-    const languageOptions = Array.from(languageSelect.options).map((option) => option.value);
-    const languageIndex = languageOptions.indexOf(postLanguage);
-    if (languageIndex === -1) {
-        // if the post language is not in the list, select "Other" and display the "Other" language input field
-        languageSelect.value = "other";
-        otherLanguageInput.classList.remove("d-none");
-        document.querySelector("#other-language").value = postLanguage
-    } else {
-        // if the post language is in the list, select the appropriate option and hide the "Other" language input field
-        languageSelect.selectedIndex = languageIndex;
-        if (postLanguage === "other") {
-            otherLanguageInput.classList.remove("d-none");
-        } else {
-            otherLanguageInput.classList.add("d-none");
-        }
-    }
+                                        // check if the post-language is in the list of options
+                                        const languageOptions = Array.from(languageSelect.options).map((option) => option.value);
+                                        const languageIndex = languageOptions.indexOf(postLanguage);
+                                        if (languageIndex === -1) {
+                                            // if the post language is not in the list, select "Other" and display the "Other" language input field
+                                            languageSelect.value = "other";
+                                            otherLanguageInput.classList.remove("d-none");
+                                            document.querySelector("#other-language").value = postLanguage
+                                        } else {
+                                            // if the post language is in the list, select the appropriate option and hide the "Other" language input field
+                                            languageSelect.selectedIndex = languageIndex;
+                                            if (postLanguage === "other") {
+                                                otherLanguageInput.classList.remove("d-none");
+                                            } else {
+                                                otherLanguageInput.classList.add("d-none");
+                                            }
+                                        }
 
-    // hide/show the "Other" language input field based on the selected value of the dropdown
-    languageSelect.addEventListener("change", () => {
-        if (languageSelect.value === "other") {
-            otherLanguageInput.classList.remove("d-none");
-        } else {
-            otherLanguageInput.classList.add("d-none");
-        }
-    });
-</script>
+                                        // hide/show the "Other" language input field based on the selected value of the dropdown
+                                        languageSelect.addEventListener("change", () => {
+                                            if (languageSelect.value === "other") {
+                                                otherLanguageInput.classList.remove("d-none");
+                                            } else {
+                                                otherLanguageInput.classList.add("d-none");
+                                            }
+                                        });
+                                    </script>
                                     <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
-                                            data-bs-target="#deletePostModal-{{ post.id }}">
+                                            data-bs-target="#deleteModal-{{ post.id }}">
                                         <i class="bi bi-trash"></i> Delete
                                     </button>
+                                    <!-- Delete post modal -->
+                                    <div class="modal fade" id="deleteModal-{{ post.id }}" tabindex="-1"
+                                         aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Are you sure you want to delete the post "{{ post.title }}"?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Cancel
+                                                    </button>
+                                                    <a href="{{ url_for('delete_post', post_id=post.id) }}"
+                                                       class="btn btn-danger">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
