@@ -12,7 +12,7 @@ I am a student at a high school in Karuizawa. Me and a half of my grade take Com
 
 ## Proposed Solution
 
-Considering the client's requirements, an adequate solution would be social-media styled website that can store data inside a database. The most common tools for web development are Javascript, HTML, CSS[^8]but Javascript is a client-side language, which means that code is executed on the user's browser. This can make it vulnerable to attacks like cross-site scripting (XSS). To remedy this, Python would be an adequate programming language for that as it is not a client-side language, open sourced, mature and excells at memory management[^2]. To host the webiste, Flask would be an adequate choice as it is highly scalable, making it fit to the client's need for a school use website without overcomplicating resources[^3].For the database, SQLite would be a good fit as the data we are fitting is not very large in number and SQLite, with its embedded,serverless nature[^4], can reduce the use of computing resources while running the website, not to mention higher speeds. To interface with the SQLAlchemy is the choice to go as it has improved performance and is protected against security attacks[^5]. As for the user interface for the website, Bootstrap 5 is recommended for its dynamic scaling abilites to scale automatically for different devices[^6].To keep the website and their users secure, JSON web tokens are used because they are resistant to security attacks[^7] and can prevent malicious users from modifying the key to access unauthorized content.
+Considering the client's requirements, an adequate solution would be social-media styled website that can store data inside a database. The most common tools for web development are Javascript, HTML, CSS[^8]but Javascript is a client-side language, which means that code is executed on the user's browser. This can make it vulnerable to attacks like cross-site scripting (XSS). To remedy this, Python would be an adequate programming language for that as it is not a client-side language, open sourced, mature and excells at memory management[^2]. To host the webiste, Flask would be an adequate choice as it is highly scalable, making it fit to the client's need for a school use website without overcomplicating resources[^3].For the database, SQLite would be a good fit as the data we are fitting is not very large and SQLite, with its embedded,serverless nature[^4], can reduce the use of computing resources while running the website, not to mention higher speeds. To interface with the SQLAlchemy is the choice to go as it has improved performance and is protected against security attacks[^5]. As for the user interface for the website, Bootstrap 5 is recommended for its dynamic scaling abilites to scale automatically for different devices[^6].To keep the website and their users secure, JSON web tokens are used because they are resistant to security attacks[^7] and can prevent malicious users from modifying the key to access unauthorized content.
 
 [^2]: Python Geeks. “Advantages of Python: Disadvantages of Python.” Python Geeks, 26 June 2021, https://pythongeeks.org/advantages-disadvantages-of-python
 [^3]: “6 Reasons Why Flask Is Better Framework for Web Application Development.” *Able*, https://able.bio/hardikshah/6-reasons-why-flask-is-better-framework-for-web-application-development--cd398f73.
@@ -106,10 +106,9 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 | 29      | Planning: Creating Flow Diagrams                          | To have the  flow diagrams finished                          | 1hr           | Apr 14                 | B         |
 | 30      | Development: Cleaning up Code                             | To have the code finalized and organized for easy-understanding | 10min         | Apr 16                 | C         |
 | 31      | Planning: Creating Test Plan                              | To have a test plan created for confirming if the application works to standard | 30min         | Apr 16                 | B         |
-| 32      | Demonstration: Finish Video for Criteria D                | Video evidence of all the success criteria functioning and working within the developed application | 2hr           |                        | D         |
-| 33      | Evaluation: Evaluation by client                          | To have the website evaluated by the client and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
-| 34      | Evaluation: Evaluation by peer                            | To have the website evaluated by a peer and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
-| 35      | Evaluation: Recommendations                               | To have taken in recommedations from both evaluations on how the website can be improved and document them properly | 15min         | Apr 19                 | E         |
+| 32      | Implementation: Evaluation by client                      | To have the website evaluated by the client and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
+| 33      | Beta Testing: Evaluation by peer                          | To have the website evaluated by a peer and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
+| 34      | Implementation: Collect Recommendations from users/client | To have taken in recommedations from both evaluations on how the website can be improved and document them properly | 15min         | Apr 19                 | E         |
 
 ## Flow Diagrams
 
@@ -150,25 +149,38 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 
 ## Existing Tools
 
-| Software/Development Tools | Coding Structure Tools      | Libraries    |
-|----------------------------|-----------------------------|--------------|
-| PyCharm                    | Object Oriented Programming | Datetime     |
-| VS Code                    | SQL requests                | Flask        |
-| Python                     | Databases                   | Jinja2       |
-| Javascript                 | Encryptions                 | Passlib.hash |
-| HTML                       | For Loops                   | dotenv       |
-| CSS                        | If-then-else statements     | Jose         |
-| SQLite                     | Object Relation Mapping     | Sqlalchemy   |
-| SQLAlchemy                 |                             | Prism.js     |
-| JSON Web Tokens            |                             |              |
-| Flask                      |                             |              |
-| Bootstrap 5                |                             |              |
-| ChatGPT                    |                             |              |
-| Github Copilot             |                             |              |
+| Libraries    |
+| ------------ |
+| Datetime     |
+| Flask        |
+| Jinja2       |
+| Passlib.hash |
+| dotenv       |
+| Jose         |
+| Sqlalchemy   |
+| Prism.js     |
+
+## References
+
+### [Bootstrap 5 Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+
+Bootstrap 5's official documentation is what I referenced regarding UI elements of my website. Snippets of code for modals, cards, headers and footer has been taken from the documentation and has been since modified to fit the needs of the current application
+
+### [ChatGPT](chat.openai.com)
+
+ChatGPT is a large language model developed by OpenAI, based on the GPT (Generative Pre-trained Transformer) architecture. It helps me with logics in code and pseudocode for parts like HTML and jinja
+
+***Disclaimer*** *No part of this program include code blocks directly copied from ChatGPT*
+
+[Github Copilot X](https://github.com/features/preview/copilot-x)
+
+GitHub Copilot is an AI-powered code completion tool developed by GitHub in collaboration with OpenAI. It uses machine learning algorithms trained on a vast corpus of code to suggest code snippets, functions, and even entire classes based on the context of what the developer is writing. It has helped me in explaining my code and syntax reformatting on HTML and Python
+
+***Disclaimer*** *No part of this program include code blocks directly generated by Github Copilot*
 
 ## List of Techniques
 
-1. Object Oriented Programming(OOP)
+1. Object-Oriented Programming(OOP)
 2. Object Relation Mapping(ORM): SQLAlchemy
 3. Flask Library/Routes
 4. Javascript/Python inside HTML
@@ -226,7 +238,7 @@ The modal is created by inheriting from the `modal` class from the Bootstrap 5 l
 
 As you can see, the content around the modal is darkened and directs the user's attention there. This same concept is also applied to when the client said they wanted a confirmation before deleting the post in the first round of beta testing. 
 
-### JSON Web Tokens
+### JSON Web Tokens (Success Criteria #1)
 
 One of the success criterias was to have a hashed login system. One issue I had after the user logged in which was that I couldn't recognize the user after the inital login process. I wanted to use cookies to store the user ids. I realized soon afterwards that the cookies can be easily modified in flight and makes the hashed passwords useless. Soon I came across session tokens. Session tokens are encrypted token that contain information about the user. They expire after a time designated by the developer and can be used to protect the user as it is hashed using a special secret key that only the developer has control over. Currently, once the user succesfully logs in with the right username and password. The main key function on the flask endpoint executes a `create_token` function from the `token_management.py`. The token is created as follows:
 
@@ -339,7 +351,7 @@ After that the child file can add content into the variable with the same line:
 
 When this html file is loaded on the browser, the base file is taken and the variables from the child file is beign stitched together automatically into one single HTML file. That way, if I need to change anything on the header/footer or change out dependencies, improving efficiency and future development upgradibility.
 
-### Posts Representation
+### Posts Representation (Success Criteria #3)
 
 To show posts, it's a repetitve / boilerplate code, thus I used the `jinja2` extension for HTML to add a logic functions into my HTML code. On load of the website after successful authtication, the database is queried for posts and an array of posts. The data is then passed through to the HTML for representation. The first thing the HTML checks for is if there's any posts that needs to be shown by the `{if posts}`clause. If posts has any object in it, a for loop `{for post in posts}` is used to loop through the posts and draw them onto the screen using a defined set of elements. Here's the full code:
 
@@ -373,7 +385,7 @@ As you can see, the for loop needs a `{endfor}` argument as it repeats all the h
 
 **Fig.13**  *Screenshot of posts.*
 
-### Code Representation - Syntax Highlighting
+### Code Representation - Syntax Highlighting (Success Criteria #2)
 
 One key thing of the social media that my client wants is the accurate representation of code with appropriate syntax highlighting and indentations. To address this, I chose to use a lightweight javascript interpreter for the code called Prism.js. To use this in my html, the code is shown with:
 
@@ -383,7 +395,7 @@ One key thing of the social media that my client wants is the accurate represent
 
 As seen here, the language of the code is needed to highlight the syntax properly as there's no way to interpret the language of the code given in such a small program. Thus, a column in the post table of the database is dedicated to storing the language of the code. The code is then housed inside the `<code>` tag and is picked up by the prism javascript file and formatted.
 
-### Like/Dislike System
+### Like/Dislike System (Success Criteria 4)
 
 Another thing my client wanted was a way to rank the posts based on how helpful they are. To do this, I added a like/dislike system to the posts. The like/dislike system is implemented by adding a like/dislike count to each post. When the user clicks on the like/dislike button, the count is updated in the database and the page is reloaded to show the updated count. The code for the like/dislike system is shown below:
 
@@ -399,7 +411,8 @@ Another thing my client wanted was a way to rank the posts based on how helpful 
                 </h3>
 ```
 
-### Sorting System(Algorithms)
+### Sorting System(Algorithms) (Success Criteria #5)
+
 With the like/dislike system, the users can sort the posts by the most helpful posts. To do this, I implemented a sorting algorithm that sorts the posts by the like count. The sorting algorithm is implemented in the `get_sorted_posts()` function in the `db_manager.py` file. The sorting algorithm is a simple sort algorithm that sorts the posts by the like count. There's a button on the dashboard of the website that can let users choose betwen sorting posts by time or by the amount of likes. The code to get the option from the user is shown below:
 ```python
 @app.route("/dashboard")
@@ -432,10 +445,11 @@ As you can see, the `sort_by` variable is set to `time` by default. If the user 
             return posts
 ```
 
-### Changing of Passwords(Decomposition)
+### Changing of Passwords(Decomposition) (Success Criteria #6)
+
 One other thing that my client wanted was a way to change their passwords. To do this, I implemented a change password function that allows the user to change their password. The change password function is implemented in the `/change_password` endpoint in the `app.py` file. The change password function is shown below:
 ```python
-    if secure_password.check_password(current,db.get_password(username)):
+ if secure_password.check_password(current,db.get_password(username)):
     if new == confirm:
         db.change_password(username, new)
         flash(('Password changed successfully.',"success"))
@@ -502,13 +516,16 @@ As you can see, the function creates two users and two posts. This reduces the a
 | The website must allow posting of code and description       | Yes  | The website allows for posting new content via the `new_post/` endpoint |
 | Users should be able to like/dislike certain posts to increase authenticity of posted content | Yes  | The website allows for liking/disliking for specific posts via `add_like/` and `add_dislike/` endpoints |
 | The website will be able to sort the posts by user/amount of likes/time posted | Yes  | The website allows for sorting by time and like count on the home page |
-| The website should allow for the changing of passwords per user | Yes  | The webiste allows for changing passwords with a button on the `my_profile/` endpoint |
+| The website should allow for the changing of passwords per user | Yes  | The website allows for changing passwords with a button on the `my_profile/` endpoint |
 
 The client is very satisfied by the product(See Appendix 3), with the website meeting all the success criteria. During beta testing, the client suggested to add a confirmation dialog for deleting posts to eliminate accidental deletion (See Appendix 5)and that has been implemented as well. One possible improvement highlighted by the client is that one person is limited to one like or dislike in order to prevent people from spamming the like button, removing authenticity from the rating.
 
 ## Evaluation by Peer
 
-My peer is very satisfied by the product(See Appendix 4), with the website meeting all the success criteria. One possible improvement highlighted by my peer was the ability to filter thorugh code by the code language on the home page as that would make it easier to sort through what they're looking for.
+My peer is very satisfied by the product(See Appendix 4), with the website meeting all the success criteria.
+One possible improvement highlighted by my peer was the ability
+to filter through code by the code language on the home page
+as that would make it easier to sort through what they're looking for.
 
 ## Extensibility
 
