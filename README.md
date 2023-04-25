@@ -172,7 +172,7 @@ ChatGPT is a large language model developed by OpenAI, based on the GPT (Generat
 
 ***Disclaimer*** *No part of this program include code blocks directly copied from ChatGPT*
 
-[Github Copilot X](https://github.com/features/preview/copilot-x)
+**[Github Copilot X](https://github.com/features/preview/copilot-x)**
 
 GitHub Copilot is an AI-powered code completion tool developed by GitHub in collaboration with OpenAI. It uses machine learning algorithms trained on a vast corpus of code to suggest code snippets, functions, and even entire classes based on the context of what the developer is writing. It has helped me in explaining my code and syntax reformatting on HTML and Python
 
