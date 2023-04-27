@@ -100,10 +100,10 @@ I will design a social media platfom on a website built with Flask, Bootstap, HT
 | 23      | Implementation: Beta Testing                              | To have feedback from client to know how to improve          | 1hr           | Apr 11                 | C         |
 | 24      | Development: Coding Delete Confirmation                   | To have the feedback from client's beta testing implemented  | 15min         | Apr 11                 | C         |
 | 25      | Development: Consolidating Code into `base_template.html` | To reduce repetitive code and centralize the dependencies for the website | 1hr           | Apr 12                 | C         |
-| 26      | Planning: Creating System Diagram                         | To have system diagram finished                              | 30min         | Apr 13                 | B         |
-| 27      | Planning: Creating UML Diagram                            | To have the UML diagram finished                             | 30min         | Apr 13                 | B         |
-| 28      | Planning: Creating ER Diagram                             | To have the ER diagram finished                              | 30min         | Apr 13                 | B         |
-| 29      | Planning: Creating Flow Diagrams                          | To have the  flow diagrams finished                          | 1hr           | Apr 14                 | B         |
+| 26      | Planning: Creating System Diagram                         | To have understanding of the computer systems required for the completing the success criteria | 30min         | Apr 13                 | B         |
+| 27      | Planning: Creating UML Diagram                            | To have understanding of the different parts of the code     | 30min         | Apr 13                 | B         |
+| 28      | Planning: Creating ER Diagram                             | To have the structure of the database documented             | 30min         | Apr 13                 | B         |
+| 29      | Planning: Creating Flow Diagrams                          | To have a clear understanding of difficult parts of code     | 1hr           | Apr 14                 | B         |
 | 30      | Development: Cleaning up Code                             | To have the code finalized and organized for easy-understanding | 10min         | Apr 16                 | C         |
 | 31      | Planning: Creating Test Plan                              | To have a test plan created for confirming if the application works to standard | 30min         | Apr 16                 | B         |
 | 32      | Implementation: Evaluation by client                      | To have the website evaluated by the client and the subsequent evidence documented | 1hr           | Apr 19                 | E         |
