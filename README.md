@@ -211,13 +211,19 @@ Snippets of code for
 modals, cards, headers and footer have been taken from the documentation and have been since modified to fit the needs
 of the current application
 
-### [ChatGPT](chat.openai.com)
+### [ChatGPT](https://chat.openai.com)
 
 ChatGPT is a large language model developed by OpenAI, based on the GPT (Generative Pre-trained Transformer)
 architecture.
-It helps me with logics in code and pseudocode for parts like HTML and jinja
+It helps me with logics in code and pseudocode for parts like HTML, jinja and JWT tokens.
 
 ***Disclaimer*** *No part of this program includes code blocks directly copied from ChatGPT*
+
+#### Example use of ChatGPT
+
+![](Assets/ExampleUseGPT.jpg)
+
+**Fig.10**  *Conversation with ChatGPT exported on 2023-05-07*
 
 **[Github Copilot X](https://github.com/features/preview/copilot-x)**
 
@@ -269,7 +275,7 @@ creates a border for the sign in form so the user's attention is immediately gra
 
 <img src="Assets/CodeShare_LoginShot.jpg" style="zoom: 33%;" />
 
-**Fig.10**  *Screenshot of the login page, as mentioned above this employs a card design in order to reduce clutter on
+**Fig.11**  *Screenshot of the login page, as mentioned above this employs a card design in order to reduce clutter on
 the screen and lead the user to the most important element which is the login fields.*
 
 ### Modals
@@ -310,7 +316,7 @@ ordinary html elements like forms and text fields.
 
 <img src="Assets/Modal.jpg" style="zoom:33%;" />
 
-**Fig.11**  *Screenshot of the modal pop up.*
+**Fig.12**  *Screenshot of the modal pop up.*
 
 As you can see, the content around the modal is darkened and directs the user's attention there. This same concept is
 also applied to when the client said they wanted a confirmation before deleting the post in the first round of beta
@@ -431,7 +437,7 @@ user. It looks like:
 
 ![](Assets/Header.jpg)
 
-**Fig.12**  *Screenshot of header.*
+**Fig.13**  *Screenshot of header.*
 
 ### Base Template(Pattern Recognition/Generalization/Abstraction)
 
@@ -517,7 +523,7 @@ post object when the page is loaded. Here is a screenshot of the posts:
 
 <img src="Assets/PostRepresentation.jpg" style="zoom:50%;" />
 
-**Fig.13**  *Screenshot of posts.*
+**Fig.14**  *Screenshot of posts.*
 
 ### Code Representation - Syntax Highlighting (Success Criteria #2)
 
