@@ -722,7 +722,7 @@ we concluded that the following future extensions could be added:
 
 # Appendix
 
-![](Assets/Appendix1_2.jpeg)
+![](Assets/Appendix1.jpeg)
 
 **Appendix.1** *Rough notes from first meeting with client, includes basic ideas behind problem with current solution*
 
@@ -734,7 +734,7 @@ we concluded that the following future extensions could be added:
 
 **Appendix.3** *Contact between developer and client for evaluation of website*
 
-![](Assets/PeerEvaluation2.jpg)
+![](Assets/PeerEvaluation.jpg)
 
 **Appendix.4** *Contact between developer and peer for evaluation of website*
 
