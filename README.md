@@ -110,6 +110,44 @@ will be evaluated according to the criteria below:
 
 **Fig.6** *Wireframe of the website*
 
+## Flow Diagrams
+
+### Token System
+
+<img src="Assets/CodeShareFlow_Token.jpg" style="zoom: 25%;" />
+
+**Fig.7** *Flow Diagram of the token system* This diagram shows how users can authenticate in my website with JWT with
+expiry time. This ensures that users' data is kept safe and no unauthorized access would occur.
+
+### Sorting
+
+<img src="Assets/CodeShareFlow_Sort4.jpg" style="zoom:25%;" />
+
+**Fig.8** *Flow Diagram of sorting system* This flow diagram demonstrates the ability to sort posts by different
+metrics.
+
+### Like System
+
+<img src="Assets/CodeShareFlow_Like2.jpg" style="zoom:25%;" /> 
+
+**Fig.9** *Flow diagram for adding and removing likes* This flow diagram demonstrates how the system for adding
+like/dislike works.
+
+## Test Plan
+
+| Type                | Description                | Process                                                      | Anticipated Outcome                                          |
+| ------------------- | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Unit Testing        | User Registration          | 1.Open Website<br/>2.Click on the register button<br/>3.Put "johndoe" as the username and "johndoelovescake" for both password fields<br/>4. Click the register button on the modal. | The modal should disappear and a flash message if stating that the user has been registered successfully. |
+| Unit Testing        | User Login                 | 1.Open Website<br />2. Put "johndoe" as the username and "johndoelovescake" as the password<br />3. Click the login button on the login card | The user should be redirected to the dashboard page of the page if the user exists and the password matches the hash in the database. |
+| Unit Testing        | Logout                     | 1.Open Website<br />2.Login using the same credentials as above<br />3.Click the log out button on the top bar | The user should be redirected back to the login screen and the session token should be removed from the session storage if checked using "Inspect" |
+| Integration Testing | Login and Registration     | 1.Open Website<br />2.Follow the instructions for registering a user above<br />3. Follow the instructions for logging in above using the same credentials that was registered with<br /> | If the user followed the instructions properly and registered for a user, then the user should be able to login with the same credentials that were just registered with. |
+| Unit Testing        | Changing Password          | 1.Open Website<br />2.Login<br />3.Click on the my profile button on the header<br />4.Click the change password button<br />5. Input the current password of the current user and put "changeme" for new and confirm password<br />6.Click Confirm | If the user followed the instructions properly and no errors occurred in the process, then the user should be able to logout and log back into the same user with the same username but with password "changeme". |
+| Unit Testing        | Adding new post            | 1.Open Website<br />2.Login<br />3.Click New Post on the header<br />4.Put in "Hello World Testers!" as the title, "This is a test to the program" as the Content, "swift" as the language and `print(Hello /(tester.username))` as the code.<br />5.Click the submit button | The user should be redirected to their own profile page, where they can see their own posts, including the one they just posted. |
+| Unit Testing        | Like/Dislike a post        | 1.Open Website<br />2.Login<br />3.Click on the like button of a post<br />4.Click on the dislike button of another post | The user should be able to see the like count of the post increase by 1 for the first post and decrease by 1 for the second one. |
+| Integration Testing | Adding Post / Viewing Post | 1.Open Website<br />2.Login<br />3.Create a new post following the instructions above<br />4.Click the home button | The user should be able to see the post they just created on the top of the dashboard. |
+| Unit Testing        | Sorting System             | 1.Open Website<br />2.Login<br />3.Change the sorting method to by like on the dashboard using the dropdown on the right | The user should be able to see posts sorted by the highest like count. |
+| Code Review         | Reviewing Code             | Going through the code and making sure unused parts are removed, variables are named properly and comments are placed appropriated | Easy to understand and easy to debug code for future development. |
+
 ## Record of Tasks
 
 | Task No | Planned Action                                            | Planned Outcome                                                                                                     | Time estimate | Target completion date | Criterion |
@@ -148,44 +186,6 @@ will be evaluated according to the criteria below:
 | 32      | Implementation: Evaluation by client                      | To have the website evaluated by the client and the subsequent evidence documented                                  | 1hr           | Apr 19                 | E         |
 | 33      | Beta Testing: Evaluation by peer                          | To have the website evaluated by a peer and the subsequent evidence documented                                      | 1hr           | Apr 19                 | E         |
 | 34      | Implementation: Collect Recommendations from users/client | To have taken in recommendations from both evaluations on how the website can be improved and document them properly | 15min         | Apr 19                 | E         |
-
-## Flow Diagrams
-
-### Token System
-
-<img src="Assets/CodeShareFlow_Token.jpg" style="zoom: 25%;" />
-
-**Fig.7** *Flow Diagram of the token system* This diagram shows how users can authenticate in my website with JWT with
-expiry time. This ensures that users' data is kept safe and no unauthorized access would occur.
-
-### Sorting
-
-<img src="Assets/CodeShareFlow_Sort4.jpg" style="zoom:25%;" />
-
-**Fig.8** *Flow Diagram of sorting system* This flow diagram demonstrates the ability to sort posts by different
-metrics.
-
-### Like System
-
-<img src="Assets/CodeShareFlow_Like2.jpg" style="zoom:25%;" /> 
-
-**Fig.9** *Flow diagram for adding and removing likes* This flow diagram demonstrates how the system for adding
-like/dislike works.
-
-## Test Plan
-
-| Type                 | Description                | Process                                                                                                                                                                                                                                                                      | Anticipated Outcome                                                                                                                                                                                              |
-|----------------------|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Unit Testing         | User Registration          | 1.Open Website<br/>2.Click on the register button<br/>3.Put "johndoe" as the username and "johndoelovescake" for both password fields<br/>4. Click the register button on the modal.                                                                                         | The modal should disappear and a flash message if stating that the user has been registered successfully.                                                                                                        |
-| Unit Testing         | User Login                 | 1.Open Website<br />2. Put "johndoe" as the username and "johndoelovescake" as the password<br />3. Click the login button on the login card                                                                                                                                 | The user should be redirected to the dashboard page of the page if the user exists and the password matches the hash in the database.                                                                            |
-| Unit Testing         | Logout                     | 1.Open Website<br />2.Login using the same credentials as above<br />3.Click the log out button on the top bar                                                                                                                                                               | The user should be redirected back to the login screen and the session token should be removed from the session storage if checked using "Inspect"                                                               |
-| Integration Testing  | Login and Registration     | 1.Open Website<br />2.Follow the instructions for registering a user above<br />3. Follow the instructions for logging in above using the same credentials that was registered with<br />                                                                                     | If the user followed the instructions properly and registered for a user, then the user should be able to login with the same credentials that were just registered with.                                        |
-| Unit Testing         | Changing Password          | 1.Open Website<br />2.Login<br />3.Click on the my profile button on the header<br />4.Click the change password button<br />5. Input the current password of the current user and put "changeme" for new and confirm password<br />6.Click Confirm                          | If the user followed the instructions properly and no errors occurred in the process, then the user should be able to logout and log back into the same user with the same username but with password "changeme". |
-| Unit Testing         | Adding new post            | 1.Open Website<br />2.Login<br />3.Click New Post on the header<br />4.Put in "Hello World Testers!" as the title, "This is a test to the program" as the Content, "swift" as the language and `print(Hello /(tester.username))` as the code.<br />5.Click the submit button | The user should be redirected to their own profile page, where they can see their own posts, including the one they just posted.                                                                                 |
-| Unit Testing         | Like/Dislike a post        | 1.Open Website<br />2.Login<br />3.Click on the like button of a post<br />4.Click on the dislike button of another post                                                                                                                                                     | The user should be able to see the like count of the post increase by 1 for the first post and decrease by 1 for the second one.                                                                                 |
-| Integration Testing | Adding Post / Viewing Post | 1.Open Website<br />2.Login<br />3.Create a new post following the instructions above<br />4.Click the home button                                                                                                                                                           | The user should be able to see the post they just created on the top of the dashboard.                                                                                                                           |
-| Unit Testing         | Sorting System             | 1.Open Website<br />2.Login<br />3.Change the sorting method to by like on the dashboard using the dropdown on the right                                                                                                                                                     | The user should be able to see posts sorted by the highest like count.                                                                                                                                           |
-| Code Review          | Reviewing Code             | Going through the code and making sure unused parts are removed, variables are named properly and comments are placed appropriated                                                                                                                                           | Easy to understand and easy to debug code for future development.                                                                                                                                                |
 
 # Criteria C: Development
 
@@ -720,11 +720,13 @@ as that would make it easier to sort through what they are looking for.
 
 ## Extensibility
 
-The client was very satisfied with the final result, as it met all of his requirements. After some additional discussion
+The client was very satisfied with the final result, as it met all of his requirements. After some additional discussion,
 we concluded that the following future extensions could be added:
 
 1. Commenting System - A commenting system to be added to posts as it could let other users give their own opinion with
    another piece of code. This could be done using a new table inside the database.
+2. Sorting option "By Code Language" - An option can be added to allow for filtering by code language so people with specific language needs can find it more easily.
+3. Limit Likes to one per user per post - Limiting likes to one per user can reduce the chances of spamming likes and more accurate rating of the code being posted.
 
 # Appendix
 
